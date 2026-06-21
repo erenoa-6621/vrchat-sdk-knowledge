@@ -4,6 +4,65 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-06-21
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4（安定版）** リリース確認（2026-06-17）: 前回 3.10.3 からメジャーアップデート
+  - 出典: https://creators.vrchat.com/releases/release-3-10-4
+
+- **VRCTween 追加**（ワールド/Udon向け）
+  - DOTweenライブラリをUdonに公開。位置・回転・スケールのアニメーション補間が可能
+  - キャンセル可能な遅延呼び出し機能も含む
+  - ※アバターではなくワールド開発向け機能
+
+- **ボックス形状Contacts対応**（新機能）
+  - VRCContactSender / VRCContactReceiverに `Box` 形状が追加
+  - 幅（Width）・高さ（Height）・奥行き（Depth）を個別設定可能（各最大6m）
+  - `Use Face Proximity` オプション（Receiver専用）: ボックスの+Z面までの距離でProximity計算。ボックス中心ではなく面への最接近距離を返すため精密な接触判定が可能
+  - 更新ファイル: `components/contacts.md`
+
+- **グローバルPhysBoneコライダー**（新機能）
+  - VRCPhysBoneColliderに `Global Collision` オプション追加
+  - ONにすると他アバターやワールドのPhysBoneとも衝突するグローバルコライダーになる
+  - **制限**: アバター1体あたり最大4個、SphereとCapsuleのみ対応（Plane不可）
+  - 6個超過時は指コライダーを「奪う」（Ring指→小指→中指の順）
+  - 更新ファイル: `components/physbones.md`
+
+- その他の変更（ワールド/Udon向け）:
+  - PhysBoneコライダーのUdon動的制御対応
+  - データコンテナにEnsureCapacityメソッド追加
+  - VRCPickup追加時に自動でPickupレイヤーに移動
+  - シェーダーチャンキング（4MB単位）を全プロジェクトで実装
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **最新安定版 v1.17.1**: 前回から変更なし
+- **v1.18.0-alpha.0**（2026-05-31）: アルファ版のまま変更なし
+  - 安定版リリース待ち
+  - 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- WebSearch が今回結果を返さなかったため、新規Tipsの追加なし
+
+### 更新ファイル一覧
+
+- `components/contacts.md`: ボックス形状対応を追記（最終更新日更新）
+- `components/physbones.md`: グローバルコライダー仕様を追記（最終更新日更新）
+- `community/tips-tools.md`: SDKバージョンを 3.10.4 に更新（最終更新日更新）
+
+### 確認済み・変更なし
+
+- PhysBone仕様（Version 1.0/1.1）: 前回から変更なし（グローバルコライダーは新機能として追記）
+- Constraints仕様（6種類）: 前回から変更なし
+- Playable Layers仕様: 前回から変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 前回から変更なし
+- Modular Avatar v1.17.1（安定版）: 前回から変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-06-14
 
 ### VRChat SDK（公式ドキュメント確認）

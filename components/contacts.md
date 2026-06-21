@@ -1,5 +1,6 @@
 # VRC Contact Sender / Receiver
 
+最終更新: 2026-06-21  
 公式: https://creators.vrchat.com/avatars/avatar-dynamics/contacts/
 
 物体同士の接触・接近を検出してAnimatorパラメータやUdonイベントをトリガーするコンポーネント。
@@ -22,9 +23,12 @@
 | パラメータ | 型 | 上限 | 説明 |
 |-----------|-----|------|------|
 | Root Transform | Transform | - | コンポーネント配置位置（空=コンポーネントのGameObject） |
-| Shape Type | Enum | - | Sphere / Capsule |
-| Radius | Float | **3.0m** | コライダー半径 |
+| Shape Type | Enum | - | Sphere / Capsule / **Box**（SDK 3.10.4+） |
+| Radius | Float | **3.0m** | コライダー半径（Sphere/Capsule） |
 | Height | Float | **6.0m** | カプセルのY軸高さ（両端の球を含む） |
+| Width | Float | **6.0m** | ボックスのX軸幅（Box形状のみ） |
+| Height (Box) | Float | **6.0m** | ボックスのY軸高さ（Box形状のみ） |
+| Depth | Float | **6.0m** | ボックスのZ軸奥行き（Box形状のみ） |
 | Position | Vector3 | - | ルートからのオフセット位置 |
 | Rotation | Quaternion | - | ルートからのオフセット回転 |
 | Local Only | Bool | - | ローカルクライアントのみで処理（アバター専用） |
@@ -37,9 +41,13 @@
 | パラメータ | 型 | 上限 | 説明 |
 |-----------|-----|------|------|
 | Root Transform | Transform | - | 配置位置 |
-| Shape Type | Enum | - | Sphere / Capsule |
-| Radius | Float | **3.0m** | コライダー半径 |
+| Shape Type | Enum | - | Sphere / Capsule / **Box**（SDK 3.10.4+） |
+| Radius | Float | **3.0m** | コライダー半径（Sphere/Capsule） |
 | Height | Float | **6.0m** | カプセル高さ |
+| Width | Float | **6.0m** | ボックスのX軸幅（Box形状のみ） |
+| Height (Box) | Float | **6.0m** | ボックスのY軸高さ（Box形状のみ） |
+| Depth | Float | **6.0m** | ボックスのZ軸奥行き（Box形状のみ） |
+| Use Face Proximity | Bool | - | ボックスの+Z面までの距離でProximity計算（Boxのみ）。中心からではなく面への最接近距離を返す |
 | Position | Vector3 | - | オフセット位置 |
 | Rotation | Quaternion | - | オフセット回転 |
 | Allow Self | Bool | - | 自分のSenderとの接触を検出（アバター専用） |

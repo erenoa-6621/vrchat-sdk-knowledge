@@ -1,6 +1,6 @@
 # VRC Phys Bone
 
-最終更新: 2026-04-16  
+最終更新: 2026-06-21  
 公式: https://creators.vrchat.com/avatars/avatar-dynamics/physbones/  
 参照: https://creators.vrchat.com/common-components/physbones/
 
@@ -218,6 +218,7 @@ PhysBoneとの衝突判定を提供する別コンポーネント。PhysBoneと�
 | Rotation | Quaternion | Root Transformからの回転オフセット |
 | Inside Bounds | Bool | ONの場合ボーンをCollider内側に収める（デフォルトOFF=外側に弾く） |
 | Bones As Sphere | Bool | ONの場合ボーンの衝突をカプセルではなく球として扱う |
+| **Global Collision** | **Bool** | **ONにするとアバター外部（他アバター・ワールド）のPhysBoneとも衝突するグローバルコライダーになる（SDK 3.10.4+）** |
 
 ### Shape Type 詳細
 
@@ -242,6 +243,24 @@ Sphere/Capsuleでのみ使用可能。Planeでは使用不可。
 |------|------|
 | OFF（デフォルト） | ボーン間のシリンダー（円柱）接続も含めてカプセル形状で衝突判定 |
 | ON | 各ボーン位置の球体のみで衝突判定（シリンダーを無視。軽量） |
+
+### グローバルコライダー（SDK 3.10.4+）
+
+**Global Collision = ON** にすることで、そのコライダーが「グローバルコライダー」として機能し、他のアバターやワールドのPhysBoneとも衝突するようになる。
+
+**制限事項（重要）:**
+- **アバター1体あたり最大4個**のグローバルコライダーを持てる
+- グローバルコライダーは **SphereとCapsuleのみ対応**（Planeは非対応）
+- 手の指コライダーを「奪う」仕組みのため、6個を超えると人差し指コライダーが上書きされる
+- 6個のうち、Ring指 > 小指 > 中指の優先順で指コライダーから差し替えられる
+
+**Allow Collisionとの関係:**
+- PhysBone側の `Allow Collision` 設定がグローバルコライダーにも適用される
+- `Allow Collision: False` のPhysBoneはグローバルコライダーに反応しない
+
+出典: https://creators.vrchat.com/releases/release-3-10-4, https://creators.vrchat.com/common-components/physbones/
+
+---
 
 ### Plane Collider の活用
 

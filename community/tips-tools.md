@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-06-14
+最終更新: 2026-06-21
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -179,11 +179,10 @@ VRChatアバターでExcellentランクを達成するための目安値（2026�
 
 ## バージョン・互換性情報
 
-| 項目 | 現在の状況（2026-06-14時点） |
+| 項目 | 現在の状況（2026-06-21時点） |
 |------|---------------------------|
 | 推奨Unity | 2022.3.x LTS |
-| SDKバージョン（安定） | 3.10.3（2026-04-16リリース）|
-| SDKバージョン（ベータ） | 3.10.4-beta.3（2026-06-11、未安定）|
+| SDKバージョン（安定） | **3.10.4（2026-06-17リリース）** |
 | Modular Avatarバージョン（安定） | 1.17.1（2026-05-14リリース）|
 | Modular Avatarバージョン（アルファ） | 1.18.0-alpha.0（2026-05-31、未安定）|
 | AvatarOptimizer (AAO) | 1.9.14 |
@@ -191,11 +190,12 @@ VRChatアバターでExcellentランクを達成するための目安値（2026�
 | 旧SDK (VRCSDK2) | 廃止済み・アップロード不可 |
 | Dynamic Bone | 非推奨。PhysBoneに移行推奨 |
 | 新コンポーネント(SDK 3.10.3) | VRCRaycast（ワールド向け） |
+| 新機能(SDK 3.10.4) | VRCTween（Udon向けトゥイーン）/ ボックス形状Contacts / グローバルPhysBoneコライダー（最大4個） |
 | MA新コンポーネント(v1.13〜v1.15) | MA Rename VRChat Collision Tags / MA Move Independently / MA Global Collider / MA Platform Filter |
 | MA新コンポーネント(v1.17.0) | MA Floor Adjuster（靴の床高さ自動調整） / VRCRaycastサポート / BlendShapeピッカーにマルチセレクト追加 |
 | MA新機能(v1.18.0-alpha) | BlendShapeカーブリマッピング対応（アルファ段階） |
 
-> **注意:** ベータ・アルファ版は本番アバターへの使用非推奨。安定版リリース後に更新予定。
+> **注意:** アルファ版は本番アバターへの使用非推奨。安定版リリース後に更新予定。
 
-出典（SDK 3.10.4 beta情報）: https://creators.vrchat.com/releases/  
+出典（SDK 3.10.4情報）: https://creators.vrchat.com/releases/release-3-10-4  
 出典（MA 1.18 alpha情報）: https://github.com/bdunderscore/modular-avatar/releases
