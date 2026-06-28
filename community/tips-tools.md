@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-06-21
+最終更新: 2026-06-28
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -122,6 +122,28 @@ VRChatアバター制作を効率化するコミュニティツールとその�
 
 ---
 
+## Quest対応・アトラス化ツール
+
+### TexTransTool（テクスチャアトラス化）
+- **用途**: マテリアルのテクスチャを非破壊的にアトラス化（1枚のテクスチャに統合）するツール
+- **主要機能**:
+  - 複数マテリアルのテクスチャを自動で1枚にまとめ、Material Slots数を削減
+  - NDMFパイプライン対応でModular Avatarと連携
+  - Modular Avatar（v1.17.1+）ではTexTransToolの後に実行順が制御されている
+- **活用場面**: Material Slotsを4個以下に削減してPC Excellentを目指す場合や、Quest対応時の素材統合
+- 出典: https://vrc-db.com/optimize/
+
+### VRCQuestTools（Quest対応変換）
+- **用途**: VRChatアバターをAndroid/Quest対応に非破壊的に変換するツール
+- **主要機能**:
+  - PCシェーダー（lilToon・Poiyomi等）をQuest互換のToon Litシェーダーに自動変換
+  - 非破壊的に変換されるため、元のPCアバター設定に影響なし
+  - Avatar Descriptorの設定をそのまま引き継ぎ
+- **活用場面**: PC用に作ったアバターをQuestユーザーにも表示させたい場合
+- 出典: https://vrc-db.com/optimize/
+
+---
+
 ## トラブルシューティング
 
 ### SDK「Missing Credentials」エラー
@@ -165,6 +187,30 @@ VRChatアバターでExcellentランクを達成するための目安値（2026�
 
 ---
 
+### PC/Quest デュアル最適化戦略
+
+PC用アバターをQuestユーザーにも表示させる「PC/Questデュアル対応」には2種類のアプローチがある。
+
+**Plan A（日常使い・見た目重視）**
+- lilAvatarUtils で4Kテクスチャを2K以下に変換
+- AAO Trace And Optimize で未使用ボーン・コンポーネントを削除
+- VRCQuestTools でシェーダーをQuest互換に変換
+- 目標: PC Good〜Excellent + Android Medium〜Poor
+
+**Plan B（イベント特化・極限軽量化）**
+- ポリゴン数: **20,000以下**（Android Poor上限。PC Excellentの32,000より厳しい）
+- TexTransTool でテクスチャアトラス化し Material Slots を4個以下に
+- ボーン数: **75個以下**（PC Excellent + Android Excellent 共通要件。`performance/ranking-system.md` 参照）
+- PhysBone Components: **4個以下**（PC Excellent要件）
+- VRCQuestTools でシェーダーをQuest互換に変換
+- 目標: PC Excellent + Android Poor 同時達成
+
+> **Android/Questのポリゴン制約はPCより大幅に厳しい**: Android Excellent=7,500 / Good=10,000 / Medium=15,000 / **Poor=20,000** トライアングルの制限がある。PC Excellent(32,000)に対してAndroid Poorが20,000と制約が強い。
+
+出典: https://vrc-db.com/optimize/
+
+---
+
 ## VRChatのSDK更新チェック先
 
 | リソース | URL | 内容 |
@@ -179,7 +225,7 @@ VRChatアバターでExcellentランクを達成するための目安値（2026�
 
 ## バージョン・互換性情報
 
-| 項目 | 現在の状況（2026-06-21時点） |
+| 項目 | 現在の状況（2026-06-28時点） |
 |------|---------------------------|
 | 推奨Unity | 2022.3.x LTS |
 | SDKバージョン（安定） | **3.10.4（2026-06-17リリース）** |

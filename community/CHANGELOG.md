@@ -4,6 +4,57 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-06-28
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **最新安定版 v1.17.1**: 前回から変更なし（2026-05-14リリースのまま）
+- **v1.18.0-alpha.0**（2026-05-31）: アルファ版のまま変更なし。安定版リリース待ち
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- `community/tips-tools.md` に以下を追記（最終更新日も更新）:
+
+  - **TexTransTool**（新ツールエントリ）
+    - マテリアルのテクスチャを非破壊的にアトラス化（1枚のテクスチャに統合）するツール
+    - NDMFパイプライン対応でModular Avatarと連携
+    - 出典: https://vrc-db.com/optimize/
+
+  - **VRCQuestTools**（新ツールエントリ）
+    - PCアバターをAndroid/Quest対応に非破壊変換
+    - lilToon・Poiyomi等のシェーダーをQuest互換Toon Litに自動変換。元のPC設定に影響なし
+    - 出典: https://vrc-db.com/optimize/
+
+  - **PC/Questデュアル最適化戦略**（新セクション）
+    - Plan A（日常使い）: lilAvatarUtils + AAO + VRCQuestTools。目標 PC Good〜Excellent + Android Medium〜Poor
+    - Plan B（イベント特化）: TrianglesをAndroid Poor上限20,000以下に、Bones 75個以下（PC Excellent要件）、Material Slots 4個以下（TexTransToolでアトラス化）、PhysBone 4個以下
+    - Androidのポリゴン制約（Poor=20k）がPC Excellent（32k）より厳しいことを解説
+    - 出典: https://vrc-db.com/optimize/
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: Quest対応ツール（TexTransTool・VRCQuestTools）新エントリと、PC/Questデュアル最適化戦略を追記（最終更新日更新）
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.17.1（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-06-21
 
 ### VRChat SDK（公式ドキュメント確認）
