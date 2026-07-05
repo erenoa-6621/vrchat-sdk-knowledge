@@ -1,6 +1,6 @@
 # Modular Avatar 概要
 
-最終更新: 2026-05-17  
+最終更新: 2026-07-05  
 公式: https://modular-avatar.nadena.dev/  
 GitHub: https://github.com/bdunderscore/modular-avatar  
 作者: bd_ (nadena.dev)
@@ -100,6 +100,7 @@ VRChat SDK ビルド
 
 | コンポーネント | 概要 |
 |-------------|------|
+| [MA Mesh Cutter](components/reactive.md#ma-mesh-cutter) | 衣装着用時にメッシュ頂点を削除して貫通防止（v1.12.0+） |
 | [MA Blendshape Sync](components/blendshape-sync.md) | 複数レンダラー間でBlendShapeを同期 |
 | [MA Scale Adjuster](components/scale-adjuster.md) | 特定ボーンのスケールを調整 |
 | [MA Mesh Settings](components/mesh-settings.md) | アンカー・バウンズを階層的に設定 |

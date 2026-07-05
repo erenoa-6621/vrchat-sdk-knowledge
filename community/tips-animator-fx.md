@@ -1,6 +1,6 @@
 # Animator / FX Layer コミュニティTips
 
-最終更新: 2026-06-07
+最終更新: 2026-07-05
 
 ---
 
@@ -114,7 +114,7 @@ VRCSDK同梱の **`proxy_empty`** クリップに置き換えることが推奨�
 
 - `proxy_empty` は `Assets/VRCSDK/Examples3/Animation/ProxyAnim/proxy_empty.anim` に同梱
 - VRCSDK 3.9.0 以上が必要
-- みみーラボ製PlayableLayersテンプレートも2025年12月リリースのver 1.11.2でこれに対応済み
+- みみーラボ製PlayableLayersテンプレートも2025年12月リリースのver 1.11.2でこれに対応済み（2026-06-29リリースの **ver 1.11.3** でベースレイヤー遷移条件のアップライトしきい値を調整）
 
 出典: https://booth.pm/ja/items/4301775
 
@@ -161,3 +161,44 @@ FX Controller の Layer 構成例:
 例: 「撫でられ中は全表情を照れ顔に固定する」「特定の状況ではジェスチャー入力を無視する」といった拡張が可能。
 
 出典: https://note.com/x9n_note/n/nb77cf6b53e74
+
+---
+
+## MA Reactive コンポーネントを使った衣装トグル実装パターン
+
+FX Layerを直接編集せずに衣装のトグル・シェイプキー連動・貫通防止を実装できるパターン。
+
+### 1. オブジェクト ON/OFF（MA Object Toggle）
+```
+衣装Prefab/
+  [MA Menu Item] → DressEnabled (Toggle)
+  [MA Object Toggle]
+    Object: 衣装メッシュ
+    Active: true（DressEnabled=ON のとき表示）
+```
+
+### 2. ボディのシュリンク連動（MA Shape Changer）
+```
+衣装Prefab/
+  BodyAdjust/
+    [MA Shape Changer]
+      Target: アバター/Body (SkinnedMeshRenderer)
+      Blendshape: "衣装A_補正" → 100
+    ↑ 衣装ONの時のみ自動適用。アニメーター不要
+```
+
+### 3. シュリンクBlendShapeがない場合（MA Mesh Cutter）
+```
+衣装Prefab/
+  PenetrationFix/
+    [MA Mesh Cutter]
+      Target: アバター/Body (SkinnedMeshRenderer)
+      ← マスクテクスチャで削除範囲を指定 (By Maskモード)
+```
+衣装ONの時だけ貫通部分の頂点をビルド時に削除できる。
+
+### 4. コンポーネントを衣装オブジェクトに集約するパターン
+複数のリアクティブコンポーネントを衣装GameObject直下にまとめることで  
+「このオブジェクトがアクティブな時にこれらを実行する」という管理が明確になる。
+
+出典: https://kxn4t.hatenablog.com/entry/2026/01/26/163232

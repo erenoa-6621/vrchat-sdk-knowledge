@@ -4,6 +4,55 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-07-05
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **最新安定版 v1.17.1**: 前回から変更なし（2026-05-14リリースのまま）
+- **v1.18.0-alpha.0**（2026-05-31）: アルファ版のまま変更なし。安定版リリース待ち
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **Playable Layers Template v1.11.3 更新**（2026-06-29）
+  - ベースレイヤー遷移条件のアップライトしきい値を調整
+  - `community/tips-animator-fx.md` の該当箇所を v1.11.3 に更新
+  - 出典: https://booth.pm/ja/items/4301775
+
+- **MA Mesh Cutter** ドキュメント化
+  - MA v1.12.0+ で追加済みだが当ナレッジベースに未記載だったコンポーネントを追記
+  - 衣装貫通防止のためにメッシュ頂点をビルド時に削除する機能。BlendShapeがない場合のMA Shape Changerの代替
+  - By Maskモード: マスクテクスチャ（白=削除対象）で削除範囲を指定
+  - 更新ファイル: `modular-avatar/components/reactive.md`（新セクション追加）、`modular-avatar/overview.md`（コンポーネント一覧に追記）
+  - MA Reactiveコンポーネントの組み合わせパターン（Object Toggle + Shape Changer + Mesh Cutter）を `community/tips-animator-fx.md` に追記
+  - 出典: https://kxn4t.hatenablog.com/entry/2026/01/26/163232
+
+### 更新ファイル一覧
+
+- `community/tips-animator-fx.md`: Playable Layers Template v1.11.3 更新記録、MA Reactiveコンポーネント組み合わせパターンを追記（最終更新日更新）
+- `modular-avatar/components/reactive.md`: MA Mesh Cutter セクションを新規追加
+- `modular-avatar/overview.md`: MA Mesh Cutter をコンポーネント一覧に追記（最終更新日更新）
+- `community/tips-tools.md`: バージョン表の日付を更新（最終更新日更新）
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.17.1（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-06-28
 
 ### VRChat SDK（公式ドキュメント確認）

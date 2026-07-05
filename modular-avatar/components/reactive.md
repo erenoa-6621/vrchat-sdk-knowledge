@@ -15,6 +15,7 @@ GameObjectのアクティブ状態やMenu Item設定に基づいて自動的に�
 | MA Shape Changer | BlendShapeの値を変更 |
 | MA Material Setter | マテリアルを設定 |
 | MA Material Swap | マテリアルを別のマテリアルと交換 |
+| MA Mesh Cutter | メッシュ頂点をビルド時に削除（v1.12.0+） |
 
 ---
 
@@ -132,6 +133,44 @@ Material Setterとの違い：置換対象を「どのマテリアルか」で�
 
 ---
 
+## MA Mesh Cutter
+
+メッシュの頂点をビルド時に削除して衣装の貫通を防ぐコンポーネント（v1.12.0+）。  
+**BlendShapeによる補正が困難な場合**（アバターにシュリンク用BlendShapeがない等）の代替手段として有効。
+
+### パラメータ
+
+| パラメータ | 説明 |
+|---------|------|
+| Target Renderer | 削除対象の SkinnedMeshRenderer |
+| Mode | By Maskなど削除方法を指定 |
+| Mask Texture | グレースケールのマスク（白=削除対象） |
+
+### 使用例: 衣装着用時に体メッシュの貫通部分を削除
+
+```
+衣装Prefab/
+  [MA Menu Item]
+    Type: Toggle
+  PenetrationFix/
+    [MA Mesh Cutter]
+      Target: アバター/Body（SkinnedMeshRenderer）
+      Mode: By Mask
+      Mask Texture: body_penetration_mask.png（白い部分の頂点を削除）
+    ↑ 衣装ONの時のみ削除を適用。アニメーター不要
+```
+
+### MA Shape Changer との使い分け
+
+| ケース | 使うコンポーネント |
+|--------|-----------------|
+| アバターにシュリンク用 BlendShape がある | MA Shape Changer |
+| BlendShape がない・作れない | MA Mesh Cutter |
+
+出典: https://kxn4t.hatenablog.com/entry/2026/01/26/163232
+
+---
+
 ## Reaction Debugger
 
 リアクティブコンポーネントの動作が意図通りか確認するデバッグツール。
@@ -150,6 +189,7 @@ Material Setterとの違い：置換対象を「どのマテリアルか」で�
 | GameObjectをON/OFF | MA Object Toggle |
 | 衣装着用時のボディ補正 | MA Shape Changer |
 | マテリアルを変える | MA Material Setter / Swap |
+| メッシュ貫通を防ぐ（BlendShapeなし） | MA Mesh Cutter |
 | 以上を組み合わせた複合トグル | 複数のリアクティブを同じMenu Itemに紐付け |
 
 **Animatorが必要なケース:**
