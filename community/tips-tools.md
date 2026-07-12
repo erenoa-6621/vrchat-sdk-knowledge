@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-07-05
+最終更新: 2026-07-12
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -20,6 +20,22 @@ VRChatアバター制作を効率化するコミュニティツールとその�
   - MA Blendshape Sync: ブレンドシェイプの同期
 - **Write Defaults**: 自動的に整合性を取ってくれる
 - **便利ショートカット**: Hierarchy上でアバターを右クリック → `Modular Avatar > Create Toggle` でオブジェクト切り替えトグルを素早く作成可能（出典: https://vrnavi.jp/modular-avatar-komono/）
+
+### lilycalInventory
+- **作者**: lilxyzw
+- **入手**: https://github.com/lilxyzw/lilycalInventory
+- **用途**: コンポーネントをGameObjectに追加するだけで衣装の着替え・トグルメニューを構築できるツール
+- **主要コンポーネント一覧**:
+
+| コンポーネント | 直接付与型 | 指定型 |
+|-------------|----------|------|
+| ON/OFF切り替え | `LI Prop` | `LI ItemToggler` |
+| 択一選択（衣装切り替え） | `LI AutoDresser` | `LI CostumeChanger` |
+| 数値スライダー操作 | `LI SmoothChanger` | — |
+| メニューフォルダ階層化 | `LI MenuFolder` | `LI MenuFolder` |
+
+- **Tips**: シェイプキーも同時操作可能。複数の衣装が入ったメニューは `LI MenuFolder` でフォルダ分類できる
+- **出典**: https://note.com/khlizard/n/n3882666ea5c9
 
 ### VRCFury
 - **入手**: https://vrcfury.com/
@@ -47,6 +63,25 @@ VRChatアバター制作を効率化するコミュニティツールとその�
 ---
 
 ## 作業効率化ツール
+
+### FaceEmo
+- **用途**: アバターの表情設定を専用UIで直感的に管理できるツール
+- **特徴**: 各ジェスチャーに対応した表情クリップをGUI操作で割り当て可能
+- **Tips**:
+  - デフォルト表情は Archive 内に保存しておくことを推奨
+  - `Open` 設定が Neutral 扱いされる（VRChat仕様）
+  - Make It MMD と併用する場合は Write Defaults を全て ON に設定が必要
+- **出典**: https://note.com/khlizard/n/n3882666ea5c9
+
+### Light Limit Changer For MA v2
+- **用途**: VRChat内でアバターのライト感度上限・下限を変更できるメニューを追加するツール
+- **特徴**: v2が現在推奨版（v1より機能充実）。Modular Avatar対応で非破壊追加可能
+- **出典**: https://note.com/khlizard/n/n3882666ea5c9
+
+### Continuous Avatar Uploader
+- **用途**: 複数のアバターバリアントを一括でビルド・アップロードするツール
+- **活用場面**: Prefab Variant で複数の衣装バリアントを管理している場合に、全バリアントを一括アップロードできる
+- **出典**: https://note.com/khlizard/n/n3882666ea5c9
 
 ### Gesture Manager
 - Unity Editor上でジェスチャーをテスト再生できる
@@ -130,8 +165,21 @@ VRChatアバター制作を効率化するコミュニティツールとその�
   - 複数マテリアルのテクスチャを自動で1枚にまとめ、Material Slots数を削減
   - NDMFパイプライン対応でModular Avatarと連携
   - Modular Avatar（v1.17.1+）ではTexTransToolの後に実行順が制御されている
+- **v1.0.1以降の挙動変更（重要）**:
+  - アトラス化とマテリアル統合が**分離**された仕様に変更
+  - マテリアル統合時、「基準マテリアル」として指定したマテリアルの描画モード（Opaque/Cutout/Transparent）が統合後の全体に適用される
+  - 透過設定のある部位（まつ毛・アイライン等）は基準マテリアルを Cutout または Transparent で設定する必要がある
 - **活用場面**: Material Slotsを4個以下に削減してPC Excellentを目指す場合や、Quest対応時の素材統合
-- 出典: https://vrc-db.com/optimize/
+- 出典: https://vrc-db.com/optimize/, https://zenn.dev/augma/articles/5957851ecb4318
+
+### XWear Packager（VRoid→VRChat変換）
+- **用途**: VRoid Studio の XAvatar 形式アバターを VRChat 向け Unity プロジェクトにインポートするツール
+- **特徴**:
+  - VRM 形式経由ではなく XAvatar 形式を使う**公式推奨の変換フロー**
+  - UniVRM（MToon10シェーダー必須）を導入した上で使用
+  - VRoid Studio → 着せ替え機能 → XAvatarエクスポート → Unity で XWear Packager Window からインポート
+- **注意**: インポート後、lilToon に切り替える際は描画モード（Opaque/Cutout/Transparent）を部位ごとに手動設定する必要がある
+- **出典**: https://zenn.dev/augma/articles/5957851ecb4318
 
 ### VRCQuestTools（Quest対応変換）
 - **用途**: VRChatアバターをAndroid/Quest対応に非破壊的に変換するツール
@@ -162,6 +210,63 @@ VRChat SDKのコントロールパネルで「Missing Credentials」が表示さ
 - `User Settings` も削除する（環境に応じて）
 
 出典: https://zenn.dev/yrd_gs/articles/b123e9fee91ff9
+
+### Build & Test が通らない：Layers/Collision Matrix エラー
+
+新規 Unity プロジェクトに VRChat SDK を追加した直後に発生するエラー。
+
+**エラーメッセージ:**
+> "You must address Layers and Collision Matrix issues before you can build."
+
+**原因:** Project の Layer 設定と Collision Matrix が VRChat 向けに設定されていない状態。
+
+**解決手順:**
+1. VRChat SDK コントロールパネルで `Setup Layers for VRChat` ボタンをクリック
+2. 確認ダイアログで「Do it!」を選択
+3. 続いて `Collision Matrix` のセットアップボタンをクリック → 「Do it!」
+4. 両方完了後、Build & Test を再実行
+
+出典: https://zenn.dev/yazirushi/articles/f8f8c59c840826
+
+### AAO Merge Skinned Mesh：Root Bone 未指定による消失バグ
+
+**症状:** `Merge Skinned Mesh` でビルド後（または Play Mode 後）にメッシュが消失する。
+
+**原因:** `Root Bone` が未指定（None）のままだと AAO がメッシュを正しく処理できない。
+
+**解決策:** Merge Skinned Mesh コンポーネントの `Root Bone` に `J_Bip_C_Hips`（または対応するヒップボーン）を手動で指定する。自動検出されないため設定漏れに注意。
+
+出典: https://zenn.dev/augma/articles/5957851ecb4318
+
+---
+
+## アバター管理ワークフロー
+
+### Prefab Variant を使った複数衣装管理
+
+複数の衣装・バリアントを効率よく管理するための推奨ワークフロー（2026年コミュニティ知見）。
+
+**階層構造例:**
+```
+大元のPrefab / FBX
+└─ ①基本設定済み Prefab Variant
+   └─ ②共通アクセサリ付き Prefab Variant
+      ├─ 衣装1 Prefab Variant
+      ├─ 衣装2 Prefab Variant
+      └─ ③シリーズ差分 Prefab Variant
+```
+
+**実作業ステップ:**
+1. アバター基本設定（PB・Contacts・FX等）を完了 → Prefab Variant 化
+2. 全衣装共通のアクセサリ・ギミックを追加 → 再び Variant 化
+3. 差分ごとに Variant を分岐させ着せ替えを管理
+4. `Continuous Avatar Uploader` で全 Variant を一括ビルド・アップロード
+
+**メリット:**
+- 基本設定の変更が全 Variant に自動反映される
+- 衣装ごとの差分のみを編集すればよく、更新コストが低い
+
+出典: https://note.com/khlizard/n/n3882666ea5c9
 
 ---
 
@@ -225,7 +330,7 @@ PC用アバターをQuestユーザーにも表示させる「PC/Questデュア�
 
 ## バージョン・互換性情報
 
-| 項目 | 現在の状況（2026-07-05時点） |
+| 項目 | 現在の状況（2026-07-12時点） |
 |------|---------------------------|
 | 推奨Unity | 2022.3.x LTS |
 | SDKバージョン（安定） | **3.10.4（2026-06-17リリース）** |

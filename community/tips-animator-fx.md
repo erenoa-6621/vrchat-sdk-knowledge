@@ -1,6 +1,6 @@
 # Animator / FX Layer コミュニティTips
 
-最終更新: 2026-07-05
+最終更新: 2026-07-12
 
 ---
 
@@ -202,3 +202,20 @@ FX Layerを直接編集せずに衣装のトグル・シェイプキー連動・
 「このオブジェクトがアクティブな時にこれらを実行する」という管理が明確になる。
 
 出典: https://kxn4t.hatenablog.com/entry/2026/01/26/163232
+
+---
+
+## MA Mesh Settings を使った Anchor Override 一括設定
+
+アバター全体の Skinned Mesh Renderer に `Anchor Override` を一括適用するための手法。個別に設定するより効率的で、後から追加したパーツにも自動適用される。
+
+**手順:**
+1. アバタールート（またはメッシュ群の親）に `MA Mesh Settings` コンポーネントを追加
+2. `Anchor Override` を `Set` モードに設定
+3. 参照先に `J_Bip_C_Hips`（ヒップボーン）を指定
+
+**効果:**
+- Skinned Mesh の Anchor Override が統一され、照明・シェーダーのバウンディングボックスが安定する
+- VRoid 系アバターや多数の Skinned Mesh が分割されているアバターで特に有効
+
+出典: https://zenn.dev/augma/articles/5957851ecb4318

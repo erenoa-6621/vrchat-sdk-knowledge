@@ -4,6 +4,83 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-07-12
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters（IsAnimatorEnabled・IsOnFriendsList含む）: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **最新安定版 v1.17.1**: 前回から変更なし（2026-05-14リリースのまま）
+- **v1.18.0-alpha.0**（2026-05-31）: アルファ版のまま変更なし。安定版リリース待ち
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **lilycalInventory** 新エントリ（`community/tips-tools.md`）
+  - コンポーネント追加で衣装のON/OFF・択一切り替え・数値スライダーメニューを構築できるツール（lilxyzw作）
+  - LI Prop / LI ItemToggler / LI AutoDresser / LI CostumeChanger / LI SmoothChanger / LI MenuFolder の使い分けを表で整理
+  - 出典: https://note.com/khlizard/n/n3882666ea5c9
+
+- **FaceEmo** 新エントリ（`community/tips-tools.md`）
+  - 表情設定を専用GUIで直感的に管理できるツール。Make It MMD 併用時は Write Defaults 全て ON が必須
+  - 出典: https://note.com/khlizard/n/n3882666ea5c9
+
+- **Light Limit Changer For MA v2** 新エントリ（`community/tips-tools.md`）
+  - VRChat内でライト感度上限・下限を変更できるメニューを非破壊追加するツール（v2推奨）
+  - 出典: https://note.com/khlizard/n/n3882666ea5c9
+
+- **Continuous Avatar Uploader** 新エントリ（`community/tips-tools.md`）
+  - Prefab Variant で管理する複数アバターを一括ビルド・アップロードできるツール
+  - 出典: https://note.com/khlizard/n/n3882666ea5c9
+
+- **TexTransTool v1.0.1+ 挙動変更**（`community/tips-tools.md` TexTransTool欄を更新）
+  - アトラス化とマテリアル統合が分離された仕様に変更
+  - 基準マテリアルの描画モード（Opaque/Cutout/Transparent）が統合後全体に適用される点に注意
+  - 出典: https://zenn.dev/augma/articles/5957851ecb4318
+
+- **XWear Packager**（VRoid→VRChat変換）新エントリ（`community/tips-tools.md`）
+  - VRoid Studio の XAvatar 形式を Unity にインポートする公式推奨フロー（VRM経由より推奨）
+  - 出典: https://zenn.dev/augma/articles/5957851ecb4318
+
+- **Build & Test Layers/Collision Matrix エラー** 対処法追記（`community/tips-tools.md` トラブルシューティング）
+  - 新規プロジェクトで "You must address Layers and Collision Matrix issues before you can build." が出る場合の解決手順
+  - 出典: https://zenn.dev/yazirushi/articles/f8f8c59c840826
+
+- **AAO Merge Skinned Mesh Root Bone 未指定バグ** 追記（`community/tips-tools.md` トラブルシューティング）
+  - Root Bone を手動指定しないとビルド後にメッシュが消失する問題と解決策（J_Bip_C_Hips を指定）
+  - 出典: https://zenn.dev/augma/articles/5957851ecb4318
+
+- **Prefab Variant を使った複数衣装管理** ワークフロー追記（`community/tips-tools.md`）
+  - 基本設定→共通アクセサリ→衣装差分という3層 Variant 構造と Continuous Avatar Uploader 連携フロー
+  - 出典: https://note.com/khlizard/n/n3882666ea5c9
+
+- **MA Mesh Settings Anchor Override 一括設定** 追記（`community/tips-animator-fx.md`）
+  - MA Mesh Settings コンポーネントを使って Anchor Override を Set モード + J_Bip_C_Hips で全メッシュに一括適用するワークフロー
+  - 出典: https://zenn.dev/augma/articles/5957851ecb4318
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: lilycalInventory・FaceEmo・Light Limit Changer For MA v2・Continuous Avatar Uploader・XWear Packager 新エントリ追加、TexTransTool v1.0.1+ 挙動変更追記、Build & Test/AAO Merge Skinned Mesh トラブルシューティング追加、Prefab Variant ワークフロー追加（最終更新日更新）
+- `community/tips-animator-fx.md`: MA Mesh Settings Anchor Override 一括設定を追記（最終更新日更新）
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.17.1（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-07-05
 
 ### VRChat SDK（公式ドキュメント確認）
