@@ -4,6 +4,65 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-07-19
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（最終更新 2026-06-17）: 変更なし
+- Contacts仕様（最終更新 2026-06-17）: 変更なし
+- Constraints仕様（最終更新 2025-10-08）: 変更なし
+- Playable Layers（最終更新 2025-12-05）: 変更なし
+- Animator Parameters（最終更新 2025-12-12）: IsAnimatorEnabled・IsOnFriendsListを含め変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **最新安定版 v1.17.1**: 前回から変更なし（2026-05-14リリースのまま）
+- **v1.18.0-alpha.0**（2026-05-31）: アルファ版のまま変更なし
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **グループインスタンスのアバターパフォーマンスランク制限**（`community/tips-tools.md` 新セクション）
+  - VRChat 2026.1.3（2026年4月9日）で追加された機能
+  - グループインスタンス作成時にGood/Medium/Poorの3段階でアバターパフォーマンスの下限を設定可能
+  - 上限超えのアバターはImpostorまたはフォールバック表示。デフォルトはNone（制限なし）
+  - PC Goodランク要件（Triangles 70k以下 / PhysBone 8個以下 / Texture Memory 75MB以下）を意識した設計の重要性が高まっている
+  - 出典: https://www.moguravr.com/vrchat-update-2026-1-3/
+
+- **VRC Constraints 実装Tips**（`community/tips-animator-fx.md` 新セクション）
+  - VRC Parent Constraintの基本設計原則: Bone Proxy（静的配置）と混同しないこと
+  - 推奨オブジェクト構造: D_Transform → D_Constraint → D_Pivot（見た目回転）→ Model の4層
+  - 左右持ち替えパターン: SourceのWeight切り替えで実装し、複数切り替えは段階的に処理
+  - Freeze To World は「停止」ではなく「ワールド基準での固定」
+  - 出典: https://zenn.dev/yrd_gs/articles/80a2a8d965ebbb
+
+- **表情制御でのAny State最適化**（`community/tips-animator-fx.md` 既存セクションに補完）
+  - Any Stateは単純ON/OFFトグルには適切だが、多段階の表情制御（8ジェスチャー等）では毎フレーム全Conditionが評価されるためCPU負荷が高い
+  - 多状態の表情制御には Entry → Idle → 表情ステート → Exit のパターンを推奨
+  - FX Layer全体でマスクを使わないこと（Gesture Controllerの指アニメーションと競合する）
+  - 出典: https://vrclibrary.com/wiki/books/blus-avatar-creation-standards/page/section-3-animator-controllers-and-you
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: グループインスタンスのパフォーマンスランク制限セクションを追加、バージョン情報テーブルの日付を更新（最終更新日更新）
+- `community/tips-animator-fx.md`: VRC Constraints 実装Tipsセクションを追加（左右持ち替えパターン・設計原則・Any State最適化を含む）（最終更新日更新）
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.17.1（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-07-12
 
 ### VRChat SDK（公式ドキュメント確認）

@@ -1,6 +1,6 @@
 # Animator / FX Layer コミュニティTips
 
-最終更新: 2026-07-12
+最終更新: 2026-07-19
 
 ---
 
@@ -202,6 +202,75 @@ FX Layerを直接編集せずに衣装のトグル・シェイプキー連動・
 「このオブジェクトがアクティブな時にこれらを実行する」という管理が明確になる。
 
 出典: https://kxn4t.hatenablog.com/entry/2026/01/26/163232
+
+---
+
+## VRC Constraints 実装Tips
+
+### VRC Parent Constraint の基本設計原則
+
+`VRC Parent Constraint` はTransform階層を変えずにTargetの位置・回転を制御するコンポーネント。Unityの親子付けや `MA Bone Proxy` と混同しないこと:
+
+| コンポーネント | 役割 |
+|------------|------|
+| MA Bone Proxy | 配置・追従先の変更（静的） |
+| VRC Parent Constraint | 動的な状態制御・切り替え |
+
+### 推奨オブジェクト構造（アイテム制御）
+
+```
+D_Transform_Hand_R   ← 追従基準
+└── D_Constraint_Hand_R   ← Constraint制御
+    └── D_Pivot_Hand_R    ← 見た目回転用Pivot
+        └── Model
+```
+
+**Constraint対象を直接回さない**: 見た目の回転は子の Pivot GameObject に委ねること。Constraint対象を直接回転させると Freeze To World 時に想定外の挙動が起きる。
+
+### 重要な設定項目
+
+| 項目 | 説明 |
+|------|------|
+| **Weight** | Source からの影響量。左右持ち替えはこれを切り替えて実装 |
+| **Freeze To World** | ワールド基準で固定する（「停止」ではなく「固定」）。解除するとアバターに追従再開 |
+| **Rebake Offsets When Unfrozen** | 固定解除時に Offset を焼き直すか。ON推奨 |
+| **Axis Exclusion** | 特定軸をConstraintの評価から除外できる |
+
+### 左右持ち替えパターン
+
+RightHandとLeftHandをSourceに指定し、それぞれの Weight をFXレイヤーでアニメーション制御する:
+
+```
+Source[0]: RightHand  Weight: 1.0 → 0.0（右→左に切り替える）
+Source[1]: LeftHand   Weight: 0.0 → 1.0
+```
+
+**注意**: 複数の切り替えを同一フレームで行わず、段階的に処理することで安定性が向上する。
+
+出典: https://zenn.dev/yrd_gs/articles/80a2a8d965ebbb
+
+---
+
+### 表情制御における Any State の使いどころ
+
+**トグル（ON/OFF切り替え）には Any State が適切**:
+```
+Any State → Toggle_ON   : Condition MyParam == true
+Any State → Toggle_OFF  : Condition MyParam == false
+```
+
+**ただし多段階の表情制御では Any State を避けること**:  
+`Any State` からの遷移はすべてのConditionが**毎フレーム評価**されるため、状態が多いほどCPU負荷が高くなる。  
+ジェスチャー表情（8ジェスチャー×両手など多数の状態）には以下パターンを推奨:
+
+```
+Entry → Idle → [表情ステート] → Exit
+```
+
+この設計では現在のステートから次のステートへの遷移のみが評価される。  
+また、**FX Layer全体ではマスクを使わない**こと（Gesture Controllerの指アニメーションと競合する）。
+
+出典: https://vrclibrary.com/wiki/books/blus-avatar-creation-standards/page/section-3-animator-controllers-and-you
 
 ---
 
