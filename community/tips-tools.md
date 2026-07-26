@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-07-19
+最終更新: 2026-07-26
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -35,7 +35,24 @@ VRChatアバター制作を効率化するコミュニティツールとその�
 | メニューフォルダ階層化 | `LI MenuFolder` | `LI MenuFolder` |
 
 - **Tips**: シェイプキーも同時操作可能。複数の衣装が入ったメニューは `LI MenuFolder` でフォルダ分類できる
-- **出典**: https://note.com/khlizard/n/n3882666ea5c9
+- **LI AutoFixMeshSettings**（最適化コンポーネント）:
+  - アバタールートに追加するだけでメッシュ設定を自動調整
+  - 上級設定で「**update when offscreen**」をオフ（オフスクリーン時の描画負荷を削減）
+  - **Anchor Override** を Hips（`Armature/Hips`）に一括設定
+  - 「**Prefab [General] Optimize**」オプション: マテリアル最適化も実行
+  - 「**Prefab [lilToon] Fix Lighting**」オプション: lilToon使用アバターのライティング修正
+- **出典**: https://note.com/khlizard/n/n3882666ea5c9, https://note.com/_aono_/n/n5c879d9f43ea
+
+### LAC: Avatar Compressor
+- **入手**: VPM/VCC経由（"LAC Avatar Compressor"で検索）
+- **用途**: アバターのテクスチャを非破壊的に圧縮するツール
+- **使い方**:
+  - プリセット「**Balanced**」でビルドするのが基本
+  - ジャギが目立つ場合は「**Quality**」プリセットに変更するか、問題のあるテクスチャを「**Freeze**」（圧縮対象外）に設定
+  - 推奨解像度: 細かい模様のあるテクスチャは 2K/1K、それ以外は 512 以下
+- **lilycalInventory との併用**: LI AutoFixMeshSettings → Prefab [General] Optimize と組み合わせることでライティングも同時最適化
+- **注意**: 顔テクスチャなど品質重視の部位は Freeze 設定で個別管理
+- **出典**: https://note.com/_aono_/n/n5c879d9f43ea
 
 ### VRCFury
 - **入手**: https://vrcfury.com/
@@ -228,6 +245,27 @@ VRChat SDKのコントロールパネルで「Missing Credentials」が表示さ
 
 出典: https://zenn.dev/yazirushi/articles/f8f8c59c840826
 
+### アバター改変後に素体が変形する
+
+**症状:** 衣装を改変したアバターをアップロードすると、素体のシェイプキー（体型・胸など）が意図せず変形している。
+
+**原因:** 元アバターの FX Layer に含まれていた「デフォルト衣装との干渉を防ぐためのシェイプキーアニメーション」が、衣装改変後も動き続けて素体を変形させている。
+
+**解決策:**
+
+1. **AAO Freeze BlendShape（推奨）**
+   - Avatar Optimizer コンポーネントの「Freeze BlendShape」機能を素体のSkinnedMeshRendererに追加
+   - 問題の原因となっているシェイプキーを選択して固定する
+   - 着替えギミックがない場合は全シェイプキーを固定しても可
+
+2. **AAO Trace And Optimize（自動対処）**
+   - アバタールートに「Trace And Optimize」を追加するだけでOK
+   - アニメーションが設定されていないシェイプキーを自動検出して固定するため、多くのケースで自動解決する
+
+**注意:** 顔パーツのシェイプキーには適用しないこと（表情アニメーションが壊れる）。
+
+出典: https://zenn.dev/narutoo/scraps/3beac50057c7ae
+
 ### AAO Merge Skinned Mesh：Root Bone 未指定による消失バグ
 
 **症状:** `Merge Skinned Mesh` でビルド後（または Play Mode 後）にメッシュが消失する。
@@ -353,7 +391,7 @@ VRChat バージョン **2026.1.3**（2026年4月9日リリース）で、グル
 
 ## バージョン・互換性情報
 
-| 項目 | 現在の状況（2026-07-19時点） |
+| 項目 | 現在の状況（2026-07-26時点） |
 |------|---------------------------|
 | 推奨Unity | 2022.3.x LTS |
 | SDKバージョン（安定） | **3.10.4（2026-06-17リリース）** |

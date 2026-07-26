@@ -4,6 +4,61 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-07-26
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **最新安定版 v1.17.1**: 前回から変更なし（2026-05-14リリースのまま）
+- **v1.18.0-alpha.0**: アルファ版のまま変更なし（安定版リリース待ち）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **LAC: Avatar Compressor**（`community/tips-tools.md` 新セクション追加）
+  - テクスチャを非破壊で圧縮するツール。プリセット「Balanced」が基本設定
+  - ジャギが目立つ場合は「Quality」プリセットへ変更、または問題テクスチャを「Freeze」（圧縮対象外）に設定
+  - 推奨解像度: 細かい模様は 2K/1K、その他は 512 以下
+  - lilycalInventory の LI AutoFixMeshSettings と組み合わせることでライティング最適化も同時実行可能
+  - 出典: https://note.com/_aono_/n/n5c879d9f43ea
+
+- **lilycalInventory「LI AutoFixMeshSettings」の詳細**（`community/tips-tools.md` 既存セクションに補完）
+  - アバタールートに追加するだけでメッシュ設定を自動調整するコンポーネント
+  - 上級設定で「update when offscreen」をオフに設定（オフスクリーン時の描画負荷削減）
+  - Anchor Override を Hips（Armature/Hips）に一括設定
+  - 「Prefab [General] Optimize」: マテリアル最適化 / 「Prefab [lilToon] Fix Lighting」: lilToon専用ライティング修正
+  - 出典: https://note.com/_aono_/n/n5c879d9f43ea
+
+- **アバター改変後の素体変形問題**（`community/tips-tools.md` トラブルシューティングに追加）
+  - 原因: 元アバターのFX Layerに含まれる衣装干渉対策シェイプキーアニメーションが改変後も動作し続ける
+  - 解決法1: AAO「Freeze BlendShape」で問題のシェイプキーを選択固定
+  - 解決法2: AAO「Trace And Optimize」がアニメーションのないシェイプキーを自動検出して固定
+  - 注意: 顔パーツのシェイプキーには適用しないこと（表情が壊れる）
+  - 出典: https://zenn.dev/narutoo/scraps/3beac50057c7ae
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: LAC: Avatar Compressor 新エントリ追加、lilycalInventory に LI AutoFixMeshSettings 詳細を補完、アバター素体変形問題のトラブルシューティングを追加（最終更新日・バージョンテーブル更新）
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.17.1（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-07-19
 
 ### VRChat SDK（公式ドキュメント確認）
