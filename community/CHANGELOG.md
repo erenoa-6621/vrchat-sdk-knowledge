@@ -4,6 +4,59 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-08-02
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **最新安定版 v1.17.1**: 前回から変更なし（2026-05-14リリースのまま）
+- **v1.18.0-alpha.0**: アルファ版のまま変更なし（安定版リリース待ち）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **かろやかテクスチャ**（`community/tips-tools.md` Quest対応・アトラス化ツールセクションに新エントリ追加）
+  - 2026年6月配布開始の無料テクスチャ軽量化ツール
+  - ワンクリックで容量を約40%カット。顔・瞳を自動保護、Quest対応、原本復元機能付き
+  - NDMFパイプライン対応
+  - 出典: https://luminance1116.booth.pm/items/8480183
+
+- **NDMF ExMenu Organizer**（`community/tips-tools.md` 作業効率化ツールセクションに新エントリ追加）
+  - ドラッグ＆ドロップでエクスプレッションメニューを非破壊的に並べ替え・フォルダ化
+  - 削除アイテムの未使用パラメーターを自動削除してアバターメモリを節約
+  - ¥500、MA+NDMF必須
+  - 出典: https://booth.pm/ja/items/7841621
+
+- **NDMF RemoveFX**（`community/tips-tools.md` 作業効率化ツールセクションに新エントリ追加）
+  - 不要なFXレイヤーをチェックボックス選択で非破壊削除
+  - 削除レイヤーでしか使われていないパラメーターも自動削除
+  - 購入アバターの不要ギミックFXを衣装改変後に安全除去する用途に最適
+  - ¥300、NDMF必須
+  - 出典: https://booth.pm/ja/items/7861390
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: かろやかテクスチャ・NDMF ExMenu Organizer・NDMF RemoveFX の新エントリ追加、バージョン情報テーブルの日付を更新（最終更新日・バージョンテーブル更新）
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.17.1（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-07-26
 
 ### VRChat SDK（公式ドキュメント確認）
