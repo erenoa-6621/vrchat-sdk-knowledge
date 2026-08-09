@@ -1,6 +1,6 @@
 # Modular Avatar 概要
 
-最終更新: 2026-07-05  
+最終更新: 2026-08-09  
 公式: https://modular-avatar.nadena.dev/  
 GitHub: https://github.com/bdunderscore/modular-avatar  
 作者: bd_ (nadena.dev)
@@ -120,6 +120,13 @@ VRChat SDK ビルド
 | [MA Platform Filter](components/vrchat-specific.md#platform-filter) | PC/Quest/iOSでの表示を制御 |
 | [MA Sync Parameter Sequence](components/vrchat-specific.md#sync-param-seq) | マルチプラットフォームのパラメータ順序統一 |
 | [MA Rename VRChat Collision Tags](components/vrchat-specific.md#rename-collision-tags) | Contactsの衝突タグを名前空間化（v1.13.0+） |
+
+### 衣装管理系（v1.18.0+）
+
+| コンポーネント | 概要 |
+|-------------|------|
+| [MA Outfit Root](components/merge-armature.md#outfit-root) | 衣装プリファブのルートをマーク。Setup Outfit 時のスケール自動コピーに対応（v1.18.0+） |
+| [MA Move To](components/bone-proxy.md#move-to) | オブジェクトをビルド時に指定先へ移動させる（v1.18.0+） |
 
 ### 位置・スケール調整系
 

@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-08-02
+最終更新: 2026-08-09
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -430,12 +430,11 @@ VRChat バージョン **2026.1.3**（2026年4月9日リリース）で、グル
 
 ## バージョン・互換性情報
 
-| 項目 | 現在の状況（2026-08-02時点） |
+| 項目 | 現在の状況（2026-08-09時点） |
 |------|---------------------------|
 | 推奨Unity | 2022.3.x LTS |
 | SDKバージョン（安定） | **3.10.4（2026-06-17リリース）** |
-| Modular Avatarバージョン（安定） | 1.17.1（2026-05-14リリース）|
-| Modular Avatarバージョン（アルファ） | 1.18.0-alpha.0（2026-05-31、未安定）|
+| Modular Avatarバージョン（安定） | **1.18.1（2026-08-03リリース）** |
 | AvatarOptimizer (AAO) | 1.9.14 |
 | SDK | VRChat Avatars 3.0 (VRCSDK3) |
 | 旧SDK (VRCSDK2) | 廃止済み・アップロード不可 |
@@ -444,9 +443,9 @@ VRChat バージョン **2026.1.3**（2026年4月9日リリース）で、グル
 | 新機能(SDK 3.10.4) | VRCTween（Udon向けトゥイーン）/ ボックス形状Contacts / グローバルPhysBoneコライダー（最大4個） |
 | MA新コンポーネント(v1.13〜v1.15) | MA Rename VRChat Collision Tags / MA Move Independently / MA Global Collider / MA Platform Filter |
 | MA新コンポーネント(v1.17.0) | MA Floor Adjuster（靴の床高さ自動調整） / VRCRaycastサポート / BlendShapeピッカーにマルチセレクト追加 |
-| MA新機能(v1.18.0-alpha) | BlendShapeカーブリマッピング対応（アルファ段階） |
-
-> **注意:** アルファ版は本番アバターへの使用非推奨。安定版リリース後に更新予定。
+| MA新コンポーネント(v1.18.0) | **MA Outfit Root**（衣装ルートマーク）/ **MA Move To**（ビルド時オブジェクト移動） |
+| MA新機能(v1.18.0) | BlendShape Syncカーブリマッピング正式対応 / 頂点フィルター強化（UVタイル選択・代替UVチャンネル） |
+| MA v1.18.1修正 | Reaction Debugger NullReferenceException解決 / Scale Adjusterプレビューのパフォーマンス向上 |
 
 出典（SDK 3.10.4情報）: https://creators.vrchat.com/releases/release-3-10-4  
-出典（MA 1.18 alpha情報）: https://github.com/bdunderscore/modular-avatar/releases
+出典（MA 1.18.x情報）: https://modular-avatar.nadena.dev/docs/changelog

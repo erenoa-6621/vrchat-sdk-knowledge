@@ -4,6 +4,49 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-08-09
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.0（安定版）リリース**: 2026-08-02（前回 alpha.0 段階から正式安定版に昇格）
+  - 新コンポーネント **MA Outfit Root**: 衣装プリファブのルートオブジェクトをマーク。Setup Outfit 実行時に MA Scale Adjuster の値をベースアバターから衣装へ自動コピー
+  - 新機能 **MA Move To**: ビルド時にオブジェクトを指定の階層位置へ移動させる機能
+  - **MA Blendshape Sync** カーブリマッピングが正式対応（アルファ段階から昇格）
+  - 頂点フィルター強化: UV タイル選択・マスク内の代替 UV チャンネル選択が可能に
+
+- **v1.18.1（安定版）リリース**: 2026-08-03
+  - バグ修正: Reaction Debugger を開く際の NullReferenceException を解決
+  - パフォーマンス改善: Scale Adjuster プレビューの動作速度を向上
+
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- WebSearch 実施: 新規の有用な Tips は確認できず（既存エントリと重複のみ）
+
+### 更新ファイル一覧
+
+- `modular-avatar/overview.md`: MA Outfit Root・MA Move To を「衣装管理系（v1.18.0+）」セクションとして新規追加、最終更新日更新
+- `community/tips-tools.md`: バージョンテーブルを v1.18.1（安定版）に更新。アルファ行を削除し v1.18.0/v1.18.1 の新機能行を追加、最終更新日更新
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-08-02
 
 ### VRChat SDK（公式ドキュメント確認）
