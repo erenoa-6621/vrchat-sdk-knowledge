@@ -4,6 +4,44 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-08-16
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **最新安定版 v1.18.1（2026-08-03）**: 前回から変更なし
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **Editor Logでアップロードファイルの容量割合を確認する手法**（`community/tips-tools.md` パフォーマンスランクセクションに追加）
+  - Console→三点メニュー→Open Editor Log を開き、`prefab.unity3d` を検索することでアセット別の容量割合を一覧確認できる
+  - 最適化前の優先順位決定に活用。「テクスチャが80%を占める」等が分かれば、テクスチャ圧縮ツールを先に実施することで効率的に削減できる
+  - 出典: https://posfie.com/@ron2kt/p/xaGWbuO
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: Editor Logによる容量割合可視化Tipsを追加、バージョンテーブル日付を2026-08-16に更新（最終更新日更新）
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.18.1（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-08-09
 
 ### VRChat SDK（公式ドキュメント確認）
