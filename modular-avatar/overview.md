@@ -1,6 +1,6 @@
 # Modular Avatar 概要
 
-最終更新: 2026-08-09  
+最終更新: 2026-08-23  
 公式: https://modular-avatar.nadena.dev/  
 GitHub: https://github.com/bdunderscore/modular-avatar  
 作者: bd_ (nadena.dev)

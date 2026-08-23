@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-08-16
+最終更新: 2026-08-23
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -20,6 +20,13 @@ VRChatアバター制作を効率化するコミュニティツールとその�
   - MA Blendshape Sync: ブレンドシェイプの同期
 - **Write Defaults**: 自動的に整合性を取ってくれる
 - **便利ショートカット**: Hierarchy上でアバターを右クリック → `Modular Avatar > Create Toggle` でオブジェクト切り替えトグルを素早く作成可能（出典: https://vrnavi.jp/modular-avatar-komono/）
+- **MA Mesh Cutter で帽子着用時の髪貫通対策**（v1.12.0+）:
+  1. **MeshDeleter with Texture**（Booth有料）を使って帽子から貫通している髪メッシュ部分をペイント → 「削除用テクスチャを書き出す」でマスク画像を保存
+  2. 帽子オブジェクトに「**MA Mesh Cutter**」コンポーネントを追加
+  3. 対象のレンダラーに髪メッシュを指定 → Vertex Filter「**By Mask**」でマスクテクスチャを割り当て
+  - **メリット**: 帽子オブジェクトに付与するため、帽子のトグルOFF時は自動的に元の髪型が復元される
+  - **注意**: MeshDeleter内で「塗りをひとつ戻す」を使用（Ctrl+Zは無効）。複数メッシュの場合は各マスクをペイントソフトで合成可能
+  - 出典: https://zenn.dev/exxxna/articles/e3ce757509850f
 
 ### lilycalInventory
 - **作者**: lilxyzw
@@ -445,11 +452,11 @@ VRChat バージョン **2026.1.3**（2026年4月9日リリース）で、グル
 
 ## バージョン・互換性情報
 
-| 項目 | 現在の状況（2026-08-16時点） |
+| 項目 | 現在の状況（2026-08-23時点） |
 |------|---------------------------|
 | 推奨Unity | 2022.3.x LTS |
 | SDKバージョン（安定） | **3.10.4（2026-06-17リリース）** |
-| Modular Avatarバージョン（安定） | **1.18.1（2026-08-03リリース）** |
+| Modular Avatarバージョン（安定） | **1.18.3（2026-08-21リリース）** |
 | AvatarOptimizer (AAO) | 1.9.14 |
 | SDK | VRChat Avatars 3.0 (VRCSDK3) |
 | 旧SDK (VRCSDK2) | 廃止済み・アップロード不可 |
@@ -461,6 +468,8 @@ VRChat バージョン **2026.1.3**（2026年4月9日リリース）で、グル
 | MA新コンポーネント(v1.18.0) | **MA Outfit Root**（衣装ルートマーク）/ **MA Move To**（ビルド時オブジェクト移動） |
 | MA新機能(v1.18.0) | BlendShape Syncカーブリマッピング正式対応 / 頂点フィルター強化（UVタイル選択・代替UVチャンネル） |
 | MA v1.18.1修正 | Reaction Debugger NullReferenceException解決 / Scale Adjusterプレビューのパフォーマンス向上 |
+| MA v1.18.2修正（2026-08-18） | VRCSDK 3.7.0でのコンパイルエラーを修正 |
+| MA v1.18.3修正（2026-08-21） | **異なるスケールの本体と衣装にMesh Cutter/Shape Changerを適用した際のメッシュ歪みを修正** / BlendShape Syncアニメーション互換性改善 / プレイモード時のメッシュ適用バグ修正 |
 
 出典（SDK 3.10.4情報）: https://creators.vrchat.com/releases/release-3-10-4  
 出典（MA 1.18.x情報）: https://modular-avatar.nadena.dev/docs/changelog

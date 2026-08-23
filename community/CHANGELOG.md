@@ -4,6 +4,49 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-08-23
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.2（安定版）リリース**: 2026-08-18
+  - VRCSDK 3.7.0でのコンパイルエラーを修正
+
+- **v1.18.3（安定版）リリース**: 2026-08-21（前回v1.18.1から2バージョンアップ）
+  - バグ修正: メッシュカッター・シェイプチェンジャーを異なるスケールの本体と衣装に適用した際のメッシュ歪みを修正（スケール差のある衣装改変時の重要修正）
+  - BlendShape Syncアニメーション互換性の改善
+  - プレイモード時のメッシュ適用バグを修正
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **MA Mesh Cutterで帽子着用時の髪貫通を防ぐワークフロー**（`community/tips-tools.md` Modular Avatarセクションに追加）
+  - MeshDeleter with Texture（Booth有料）で貫通箇所をマスクテクスチャとして書き出し → 帽子オブジェクトのMA Mesh CutterにBy Maskで適用
+  - 帽子をトグルOFFした際に元の髪型が自動復元されるのが最大のメリット
+  - 出典: https://zenn.dev/exxxna/articles/e3ce757509850f
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: MAバージョンをv1.18.3に更新、v1.18.2・v1.18.3バグ修正情報をバージョンテーブルに追加、MA Mesh Cutter帽子/髪貫通対策TipsをModular Avatarセクションに追加（最終更新日更新）
+- `modular-avatar/overview.md`: 最終更新日を2026-08-23に更新
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-08-16
 
 ### VRChat SDK（公式ドキュメント確認）
