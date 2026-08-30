@@ -1,6 +1,6 @@
 # Modular Avatar 概要
 
-最終更新: 2026-08-23  
+最終更新: 2026-08-30  
 公式: https://modular-avatar.nadena.dev/  
 GitHub: https://github.com/bdunderscore/modular-avatar  
 作者: bd_ (nadena.dev)
@@ -36,7 +36,8 @@ VRChatアバターの改変・ギミック追加を**非破壊的**に行うた�
 
 **必須要件:**
 - VRChat SDK（最新版）
-- Unity 2022.3.x LTS
+- Unity 2022.3.x LTS（推奨）
+- Unity 6.1〜6.7: v1.18.4より実験的サポート追加
 
 ---
 

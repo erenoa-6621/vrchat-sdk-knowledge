@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-08-23
+最終更新: 2026-08-30
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -470,6 +470,7 @@ VRChat バージョン **2026.1.3**（2026年4月9日リリース）で、グル
 | MA v1.18.1修正 | Reaction Debugger NullReferenceException解決 / Scale Adjusterプレビューのパフォーマンス向上 |
 | MA v1.18.2修正（2026-08-18） | VRCSDK 3.7.0でのコンパイルエラーを修正 |
 | MA v1.18.3修正（2026-08-21） | **異なるスケールの本体と衣装にMesh Cutter/Shape Changerを適用した際のメッシュ歪みを修正** / BlendShape Syncアニメーション互換性改善 / プレイモード時のメッシュ適用バグ修正 |
+| MA v1.18.4（2026-08-29） | **Unity 6.1〜6.7への実験的サポート追加** / Unity 6.2+のMeshLOD処理修正 / MA Blendshape Sync・Mesh Cutter・Material Setter・Shape Changerのバグ修正 / Sync Parameter Sequence設定参照問題修正 |
 
 出典（SDK 3.10.4情報）: https://creators.vrchat.com/releases/release-3-10-4  
 出典（MA 1.18.x情報）: https://modular-avatar.nadena.dev/docs/changelog

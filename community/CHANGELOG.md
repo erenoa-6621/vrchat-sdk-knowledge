@@ -4,6 +4,48 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-08-30
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.4**: 前回から変更なし（2026-06-17リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.4（安定版）リリース**: 2026-08-29（前回v1.18.3から1バージョンアップ）
+  - **Unity 6.1〜6.7への実験的サポート追加**（v1.18.4最大のアップデート）
+  - Unity 6.2+ での MeshLOD 処理を修正
+  - MA Blendshape Sync: メッシュ関連エラーを修正
+  - MA Mesh Cutter: 空メッシュ処理の問題を修正
+  - MA Material Setter: 負のマテリアルスロット問題を修正
+  - Shape Changer / Mesh Cutter: プレビュー更新の不具合を修正
+  - Sync Parameter Sequence: 設定参照問題を修正
+  - エディタ操作の取り消し機能とプレハブインスタンス変更の保存問題を修正
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- 新規追加なし（今週の検索では既存エントリと重複のみ）
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: MA v1.18.4リリース情報をバージョンテーブルに追加、最終更新日を2026-08-30に更新
+- `modular-avatar/overview.md`: Unity 6.1〜6.7実験的サポートを必須要件セクションに追記、最終更新日を2026-08-30に更新
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.4（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-08-23
 
 ### VRChat SDK（公式ドキュメント確認）
