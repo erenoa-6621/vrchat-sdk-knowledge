@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-08-30
+最終更新: 2026-09-06
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -452,17 +452,18 @@ VRChat バージョン **2026.1.3**（2026年4月9日リリース）で、グル
 
 ## バージョン・互換性情報
 
-| 項目 | 現在の状況（2026-08-23時点） |
+| 項目 | 現在の状況（2026-09-06時点） |
 |------|---------------------------|
 | 推奨Unity | 2022.3.x LTS |
-| SDKバージョン（安定） | **3.10.4（2026-06-17リリース）** |
-| Modular Avatarバージョン（安定） | **1.18.3（2026-08-21リリース）** |
+| SDKバージョン（安定） | **3.10.5（2026-09-04リリース）** |
+| Modular Avatarバージョン（安定） | **1.18.7（2026-09-01リリース）** |
 | AvatarOptimizer (AAO) | 1.9.14 |
 | SDK | VRChat Avatars 3.0 (VRCSDK3) |
 | 旧SDK (VRCSDK2) | 廃止済み・アップロード不可 |
 | Dynamic Bone | 非推奨。PhysBoneに移行推奨 |
 | 新コンポーネント(SDK 3.10.3) | VRCRaycast（ワールド向け） |
 | 新機能(SDK 3.10.4) | VRCTween（Udon向けトゥイーン）/ ボックス形状Contacts / グローバルPhysBoneコライダー（最大4個） |
+| 新機能(SDK 3.10.5) | **AudioLink対応**（Toon Standardシェーダー向け）/ Udonからのリアルタイム反射プローブ・シャドウマスクモードアクセス / 大規模バグ修正・ワークフロー改善 |
 | MA新コンポーネント(v1.13〜v1.15) | MA Rename VRChat Collision Tags / MA Move Independently / MA Global Collider / MA Platform Filter |
 | MA新コンポーネント(v1.17.0) | MA Floor Adjuster（靴の床高さ自動調整） / VRCRaycastサポート / BlendShapeピッカーにマルチセレクト追加 |
 | MA新コンポーネント(v1.18.0) | **MA Outfit Root**（衣装ルートマーク）/ **MA Move To**（ビルド時オブジェクト移動） |
@@ -471,6 +472,9 @@ VRChat バージョン **2026.1.3**（2026年4月9日リリース）で、グル
 | MA v1.18.2修正（2026-08-18） | VRCSDK 3.7.0でのコンパイルエラーを修正 |
 | MA v1.18.3修正（2026-08-21） | **異なるスケールの本体と衣装にMesh Cutter/Shape Changerを適用した際のメッシュ歪みを修正** / BlendShape Syncアニメーション互換性改善 / プレイモード時のメッシュ適用バグ修正 |
 | MA v1.18.4（2026-08-29） | **Unity 6.1〜6.7への実験的サポート追加** / Unity 6.2+のMeshLOD処理修正 / MA Blendshape Sync・Mesh Cutter・Material Setter・Shape Changerのバグ修正 / Sync Parameter Sequence設定参照問題修正 |
+| MA v1.18.5修正（2026-08-30） | Floor Adjusterが破損した人型ボーン参照を含むアバターで機能しなくなる問題を修正 |
+| MA v1.18.6修正（2026-08-30） | リアクティブコンポーネントプレビューがオブジェクトのアクティブ状態に対応していない問題を修正 |
+| MA v1.18.7修正（2026-09-01） | **Mesh Cutterプレビューの表示不正を修正** / NaNimationの頂点重複処理を最適化 / リアクティブコンポーネントの非アニメーション状態の問題を解決 |
 
-出典（SDK 3.10.4情報）: https://creators.vrchat.com/releases/release-3-10-4  
+出典（SDK 3.10.5情報）: https://creators.vrchat.com/releases/  
 出典（MA 1.18.x情報）: https://modular-avatar.nadena.dev/docs/changelog

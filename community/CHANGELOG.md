@@ -4,6 +4,50 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-09-06
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.5（安定版）リリース**: 2026-09-04（前回 3.10.4 からバージョンアップ）
+  - 修正とワークフロー改善の大規模コレクション
+  - **AudioLink対応**（Toon Standardシェーダー向け）
+  - Udonからのリアルタイム反射プローブおよびシャドウマスクモードアクセス
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.5（安定版）リリース**: 2026-08-30
+  - Floor Adjusterが破損した人型ボーン参照を含むアバターで機能しなくなる問題を修正
+- **v1.18.6（安定版）リリース**: 2026-08-30
+  - リアクティブコンポーネントプレビューがオブジェクトのアクティブ状態に対応していない問題を修正
+- **v1.18.7（安定版）リリース**: 2026-09-01（前回v1.18.4から3バージョンアップ）
+  - **Mesh Cutterプレビューの表示不正を修正**
+  - NaNimationの頂点重複処理を最適化
+  - リアクティブコンポーネントの非アニメーション状態の問題を解決
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- 新規追加なし（今週の検索では既存エントリと重複のみ）
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: SDKバージョンを3.10.5に更新、MA v1.18.5・v1.18.6・v1.18.7のリリース情報をバージョンテーブルに追加、最終更新日を2026-09-06に更新
+- `modular-avatar/overview.md`: 最終更新日を2026-09-06に更新
+
+### 確認済み・変更なし
+
+- VRChat SDK PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-08-30
 
 ### VRChat SDK（公式ドキュメント確認）
