@@ -4,6 +4,54 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-09-13
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.5（安定版）**: 前回から変更なし（2026-09-04リリース済み）
+- PhysBone仕様（グローバルコライダー含む）、Contacts（ボックス形状含む）、Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 前回から変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### VRChatロードマップ（確認）
+
+開発進行中の機能（未リリース）:
+- **Action Drivers**: VRC Action Driverコンポーネント（ビルドインアクション系）
+- **Material Contacts**: マテリアルコンタクト機能
+- **Variable width avatar parameters**: アバターパラメータのビット幅可変化
+- **Advanced contact proximity parameters**: Contactsパラメータの拡張情報
+- 出典: https://creators.vrchat.com/roadmap/
+
+### コミュニティTips
+
+- **PhysBoneで掴めるアイテムを作る**（`community/tips-physbone.md` に新セクション追加）
+  - 親子2層構造の必要性（親子間に Y=0.1 程度の距離が必須）
+  - 設定値: Pull 0.35〜1.0 / Spring 0 / Immobile 1 / Allow Grabbing True / Snap To Hand True
+  - Max Stretch の重要性: 距離が短いと値を大きくしないと掴んでいる様子が見えない
+  - 出典: https://note.com/kalkal_vrc/n/n05b2bc141f74（2026-01-10）
+
+### 更新ファイル一覧
+
+- `community/tips-physbone.md`: PhysBone掴めるアイテム作成セクションを新規追加、最終更新日を2026-09-13に更新
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.5（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-09-06
 
 ### VRChat SDK（公式ドキュメント確認）
