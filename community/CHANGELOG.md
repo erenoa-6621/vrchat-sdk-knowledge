@@ -4,6 +4,57 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-09-27
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.5（安定版）**: 前回から変更なし（2026-09-04リリース済み）
+- PhysBone仕様（グローバルコライダー含む）: 変更なし（ドキュメント最終更新 2026-08-27）
+- Contacts（ボックス形状含む）: 変更なし（ドキュメント最終更新 2026-06-17）
+- Constraints（6種類）、Playable Layers、Animator Parameters（IsAnimatorEnabled・IsOnFriendsList含む）: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 前回から変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **Blenderでのポリゴン削減**（`community/tips-tools.md` に新セクション追加）
+  - Unity側ツールで削減しきれない場合の直接Blender編集手法
+  - 目標数値: 4万前後（7万→4万の58%削減事例）
+  - シームを削らない（UVアンラップ境界が穴になる）
+  - BlendShapeのある箇所は変形ONで確認が必須
+  - 関節部分（肘・膝・指）は保護が必要
+  - 出典: https://zenn.dev/hatolife/articles/2a2661f9f4a716
+
+- **女の子座り時のスカートPhysBone破綻防止**（`community/tips-physbone.md` に新サブセクション追加）
+  - Immobile 0.8 + Cカーブ 根元0.8→末端0.2
+  - 太ももコライダーを中央寄せ（左右で重なるほど内側に配置）
+  - スカートコライダーRadiusのCカーブ: 時間0=0.4 / 時間0.53=0.2 / 時間1=0.72
+  - 前面ボーン密度（目安5本以上）
+  - 出典: https://laugh-gadget.com/2026/01/26/vrchat-physbones-setting/
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: Blenderポリゴン削減セクションを新規追加、バージョンテーブル日付を2026-09-27に更新、最終更新日を2026-09-27に更新
+- `community/tips-physbone.md`: 女の子座り時のスカート破綻防止サブセクションを追加、最終更新日を2026-09-27に更新
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.5（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-09-13
 
 ### VRChat SDK（公式ドキュメント確認）
