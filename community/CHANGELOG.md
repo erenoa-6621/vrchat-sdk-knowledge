@@ -4,6 +4,58 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-10-04
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.5（安定版）**: 前回から変更なし（2026-09-04リリース済み）
+- PhysBone仕様（グローバルコライダー含む）: 変更なし
+- Contacts（ボックス形状含む）: 変更なし
+- Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 前回から変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **Immobile Type = World の活用**（`community/tips-physbone.md` に新セクション追加）
+  - World設定にすると移動時のみ揺れを抑制し、ダンスアニメーション中は自然に揺れる
+  - スカート・スパッツ向け: Immobile 0.6〜0.8 + Immobile Type World で歩行時の過剰な揺れを防止
+  - 出典: https://tiny-sparklies.com/20260923-2/
+
+- **スカートボーン設計（本数と配置）**（`community/tips-physbone.md` に新セクション追加）
+  - 1スカートあたりボーン数の目安: 8〜12本がベスト
+  - Radius: 0.01〜0.03 を目安（大きすぎると隣接ボーンと干渉して浮く）
+  - 出典: https://tiny-sparklies.com/20260923-2/
+
+- **ロードマップ詳細（近日公開予定機能）**（`community/tips-animator-fx.md` に新セクション追加）
+  - **Material Contacts**: シェーダープロパティへの直接書き込み、最大4 Mesh Rendererにワールド空間変換行列情報を送信、60FPS制限解除
+  - **Action Drivers**: パラメータをGameObject ON/OFF・BlendShape直接バインド（アニメーター不要）
+  - **Variable Width Parameters**: 2〜16ビット範囲でパラメータのビット幅を指定可能（2bit整数で75%削減）
+  - 出典: https://ask.vrchat.com/t/developer-update-27-august-2026/48877
+
+### 更新ファイル一覧
+
+- `community/tips-physbone.md`: Immobile Type World活用セクション・スカートボーン設計セクションを新規追加、最終更新日を2026-10-04に更新
+- `community/tips-animator-fx.md`: 近日公開予定機能（Material Contacts・Action Drivers・Variable Width）の技術詳細セクションを新規追加、最終更新日を2026-10-04に更新
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.5（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-09-27
 
 ### VRChat SDK（公式ドキュメント確認）
