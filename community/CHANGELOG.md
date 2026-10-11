@@ -4,6 +4,58 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-10-11
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.5（安定版）**: 前回から変更なし（2026-09-04リリース済み）
+- PhysBone仕様（グローバルコライダー含む）: 変更なし
+- Contacts（ボックス形状含む）: 変更なし
+- Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 前回から変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **VRChatクライアント新機能: Avatar Accessories (2026.2.1)**（`community/tips-tools.md` に新セクション追加）
+  - VRChatクライアントから直接アバターに帽子・サングラス・ハローなどを取り付けられる機能
+  - Unityプロジェクト不要。ワールド移動後もアクセサリーが保持される
+  - 現時点はVRChatショップ販売アイテムのみ対応
+  - 出典: https://www.moguravr.com/?p=312282
+
+- **Unity 6 Open Beta 発表（2026年6月25日）**（`community/tips-tools.md` に新セクション追加）
+  - VRChatがUnity 6対応のオープンベータを開始。テスト用ブランチ `unity-6`（Unity `6000.0.60f1`）
+  - **重要**: 本番アップロードは引き続き 2022.3.22f1 のみ対応。より新しいバージョンはサーバーに拒否される
+  - 近日対応予定: PhysBones/Contacts の Play Mode リロード後の動作継続 / SDKコンポーネントの「VRChat」カテゴリ化
+  - 出典: https://ask.vrchat.com/t/developer-update-25-june-2026/48618
+
+- **EasyAvatarOptimizer**（`community/tips-tools.md` 作業効率化ツールセクションに新エントリ追加）
+  - ¥500。アバターの各パラメータを自動スキャンし、目標ランク達成のための最適化ルートを提案・実行するツール
+  - 改変後アバターのランク調整作業の出発点として有用
+  - 出典: https://booth.pm/ja/items/8382092
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: Avatar Accessoriesセクション・Unity 6 Open Betaセクションを新規追加、EasyAvatarOptimizerエントリを追加、バージョンテーブル日付を2026-10-11に更新、最終更新日を2026-10-11に更新
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.5（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-10-04
 
 ### VRChat SDK（公式ドキュメント確認）
