@@ -1,6 +1,6 @@
 # 便利ツール・アセット情報
 
-最終更新: 2026-10-11
+最終更新: 2026-10-18
 
 VRChatアバター制作を効率化するコミュニティツールとその用途。
 
@@ -143,6 +143,28 @@ VRChatアバター制作を効率化するコミュニティツールとその�
 - **活用場面**: 購入アバターの不要なデフォルトギミック FX（例: 配布元衣装の揺れ制御レイヤー）を衣装改変後に安全に除去する
 - **必要環境**: NDMF（Non-Destructive Modular Framework）
 - **出典**: https://booth.pm/ja/items/7861390
+
+### PhysBone Override
+- **作者**: Alameda
+- **入手**: https://booth.pm/ja/items/8330366
+- **価格**: ¥300
+- **用途**: 親オブジェクト配下のPhysBoneを一括検出し、設定を非破壊で変更するツール
+- **主要機能**:
+  - 変更項目: Gravity・Gravity Falloff・Radius・Collision・Add Colliders・Grabbing・Posing（チェックした項目のみ変更）
+  - `Add Colliders` モード: 既存のColliderを消さず、指定Colliderだけを追加（重複防止）
+  - **Depth 指定**: -1=全階層 / 0=ターゲットのみ / 1=直下の子まで / 2以上=指定階層まで
+  - **フィルタ**: C#正規表現でボーン名・パスを絞り込み可能
+  - 適用前に対象PhysBone一覧を確認できる
+- **適用方法**:
+  - **非破壊（NDMF）**: アバター右クリック → `PhysBone Override` から追加 → ビルド時に自動反映
+  - **直接適用**: `Tools/PhysBone Override` ウィンドウから「適用」
+- **付属プリセット（Prefab）**:
+  - `Disable Posing`: すべての固定（Posing）を無効化
+  - `Set Gravity of Hair`: 髪に重力を追加
+  - `Set Ground Collider`: 地面のColliderを追加
+  - `Set Breasts Raycast`: 胸にVRC Raycastを使った当たり判定を追加
+- **活用場面**: 購入アバターの全PhysBoneに地面コライダーを一括追加したい場合、配布衣装のPhysBone掴み設定を一括変更したい場合などに特に有効
+- **出典**: https://booth.pm/ja/items/8330366
 
 ### Gesture Manager
 - Unity Editor上でジェスチャーをテスト再生できる

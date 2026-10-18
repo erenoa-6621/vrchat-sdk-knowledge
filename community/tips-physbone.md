@@ -1,6 +1,6 @@
 # PhysBone コミュニティTips
 
-最終更新: 2026-10-04
+最終更新: 2026-10-18
 
 ---
 
@@ -409,3 +409,48 @@ FBXエクスポート時 → アーマチュア → 「リーフボーン追加�
 - アバター身長差による掴みにくさ（特に超小型/超大型アバター）
 
 出典: https://note.com/kalkal_vrc/n/nc5145318f864, https://note.com/oyajik/n/n584365cc6b93
+
+---
+
+## PhysBone パラメータでアニメーションを連動させる
+
+PhysBoneの揺れ・伸縮量をアニメーションのMotionTimeに接続することで、「揺れに連動して動く演出」を実現できる高度な活用方法。
+
+### 基本的な仕組み
+
+PhysBoneの `Parameter` フィールドに名前（例: `MaskPhis`）を入れると、以下のパラメータが自動生成される:
+
+| 生成パラメータ | 型 | 内容 |
+|---|---|---|
+| `MaskPhis_Stretch` | Float | ボーンの現在の伸縮量（0〜1） |
+| `MaskPhis_Squish` | Float | ボーンの圧縮量（0〜1） |
+| `MaskPhis_Angle` | Float | 傾きの量（0〜1） |
+| `MaskPhis_IsGrabbed` | Bool | 掴み中かどうか |
+| `MaskPhis_IsPosed` | Bool | ポーズ固定中かどうか |
+
+**注意:** `Parameter` を設定すると毎フレームの計算コストが増加する。実際に使う場合のみ設定すること。
+
+### アニメーションへのMotionTime接続手順
+
+1. HeadボーンなどにGameObjectを追加し、VRC PhysBoneを付与する
+2. PhysBone の `Parameter` に任意の名前（例: `MaskPhis`）を入力
+3. Animatorに `MaskPhis_Stretch`（Float型）変数を追加
+4. 連動させたいアニメーションのステートを選択 → `Motion Time` に `MaskPhis_Stretch` を設定
+   - これにより PhysBone が伸びるほどアニメーションが進む
+
+### 設定例（作者の参考値）
+
+```
+Integration Type: Simplified
+Pull:     0.6
+Spring:   0.1
+Immobile: 0.2
+Gravity:  0
+```
+
+### 活用例
+- 揺れ幅に合わせてエフェクトオブジェクトが現れる
+- 「引っ張った量」に応じてBlendShapeが変化する
+- 掴まれたタイミング（IsGrabbed）でパーティクルを発火させる
+
+出典: https://scrapbox.io/defaultcf/PhysBone%E3%81%AE%E5%8B%95%E3%81%8D%E3%81%A7%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99

@@ -4,6 +4,55 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-10-18
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.5（安定版）**: 前回から変更なし（2026-09-04リリース済み）
+- PhysBone仕様（グローバルコライダー含む）: 変更なし
+- Contacts（ボックス形状含む）: 変更なし
+- Constraints（6種類）、Playable Layers、Animator Parameters: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 前回から変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **PhysBone Override**（`community/tips-tools.md` 作業効率化ツールセクションに新エントリ追加）
+  - ¥300。親オブジェクト配下のPhysBoneを一括検出してGravity・Radius・Collider追加・Grabbing等の設定を非破壊で変更するツール
+  - NDMFパイプライン対応（アバター右クリックメニューから非破壊追加可能）
+  - Depth指定とC#正規表現フィルタで対象ボーンを絞り込み可能
+  - 地面コライダー一括追加・全PhysBone掴み設定一括変更などに特に有効
+  - 出典: https://booth.pm/ja/items/8330366
+
+- **PhysBoneパラメータでアニメーションを連動させる**（`community/tips-physbone.md` に新セクション追加）
+  - PhysBoneの `Parameter` フィールドに名前を入力すると `_Stretch`・`_Angle`・`_IsGrabbed` 等のパラメータが自動生成される
+  - AnimatorのMotionTimeに `_Stretch` を設定することで「揺れ幅に連動したアニメーション」が実現可能
+  - 活用例: 揺れに合わせてエフェクト発火・引っ張り量でBlendShape変化・IsGrabbedでパーティクル
+  - 出典: https://scrapbox.io/defaultcf/PhysBone%E3%81%AE%E5%8B%95%E3%81%8D%E3%81%A7%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: PhysBone Overrideエントリを作業効率化ツールセクションに新規追加、最終更新日を2026-10-18に更新
+- `community/tips-physbone.md`: PhysBoneパラメータでアニメーションを連動させるセクションを新規追加、最終更新日を2026-10-18に更新
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.5（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-10-11
 
 ### VRChat SDK（公式ドキュメント確認）
