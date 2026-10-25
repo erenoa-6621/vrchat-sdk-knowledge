@@ -4,6 +4,50 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-10-25
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.5（安定版）**: 前回から変更なし（2026-09-04リリース済み）
+- **PhysBoneページが2026-10-20に更新**（前回記録の2026-08-27から更新）
+  - VRCPhysBoneRoot（ワールド専用コンポーネント）の説明が追記された模様
+  - VRCPhysBoneRoot: ワールド内のPhysBoneを動作する「ルート」と「タイミングモード（Automatic・Fixed Time・Real Time）」を設定するコンポーネント（アバターには非適用）
+  - グローバルコライダーのフィルタ詳細（同アバター内・他アバター・ワールドなど対象を絞り込むオプション）が明文化された
+  - アバター向けの主要仕様変更は確認できず
+  - 出典: https://creators.vrchat.com/avatars/avatar-dynamics/physbones/
+- Contacts（ボックス形状含む）: 変更なし（最終更新 2026-06-17）
+- Constraints（6種類）: 変更なし
+- Playable Layers: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし（最終更新 2025-12-12）
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 前回から変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- 新規の有用なTipsは確認できず（検索結果は既存エントリと重複のみ）
+
+### 更新ファイル一覧
+
+- `community/CHANGELOG.md`: 2026-10-25 エントリを追加
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.5（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: アバター向け仕様変更なし（ページ更新日のみ変化: 2026-10-20）
+- Contacts仕様（ボックス形状含む）: 変更なし
+- Constraints仕様（6種類）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（IsAnimatorEnabled、IsOnFriendsList含む）: 変更なし
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-10-18
 
 ### VRChat SDK（公式ドキュメント確認）
