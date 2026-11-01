@@ -1,6 +1,6 @@
 # Animator Parameters
 
-最終更新: 2026-04-19  
+最終更新: 2026-11-01  
 公式: https://creators.vrchat.com/avatars/animator-parameters/
 
 VRChatがアバターのAnimatorに自動的に書き込むビルトインパラメータと、  
@@ -113,11 +113,22 @@ Expression Parametersアセットで自由に定義できるパラメータ。
 | Saved | trueの場合、アバター切り替え・ワールド移動後も値を保持 |
 | Synced | trueの場合、他のプレイヤーにネットワーク同期される |
 
+### SDK 3.10.6+ 追加オプション
+
+| オプション | 対応型 | 説明 |
+|---------|------|------|
+| **Lerp Duration** | Float/Int/Bool | 設定すると値が線形補間しながらターゲット値に近づく。動きを滑らかにしたい場合に有用 |
+| **Bit Width** | Int/Float | 8bit未満のビット幅を指定可能。精度・範囲が落ちるが同期パラメータのビット予算を節約できる（例: 2bitで75%削減） |
+| **Representation** | Float/Int | Floatは `Unsigned`（0〜1）または通常（-1〜1）を選択可能。Intは `Signed`（-128〜127）または通常（0〜255）を選択可能 |
+| **Value（Bool用）** | Bool | 3.10.2で削除されたBoolパラメータへのValue設定が復活。ただしSDKが使用警告を出す（互いに排他的な状態にはInt推奨） |
+
+- 出典: https://creators.vrchat.com/releases/release-3-10-6
+
 ### 総ビット数制限
 - 全パラメータの合計ビット数は **256bit** まで
   - Bool: 1bit
-  - Int: 8bit
-  - Float: 8bit（量子化されて同期）
+  - Int: 8bit（Bit Width設定で削減可能：SDK 3.10.6+）
+  - Float: 8bit（量子化されて同期。Bit Width設定で削減可能：SDK 3.10.6+）
 - Expression Parametersの最大登録数は **8192個**（ビット制限の範囲内で）
 - マルチプラットフォーム注意: パラメータはリスト順と型でマッチングされる（名前ではない）
   → PC版とQuest版でパラメータの順序・型を必ず一致させること

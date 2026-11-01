@@ -1,6 +1,6 @@
 # VRC Contact Sender / Receiver
 
-最終更新: 2026-06-21  
+最終更新: 2026-11-01  
 公式: https://creators.vrchat.com/avatars/avatar-dynamics/contacts/
 
 物体同士の接触・接近を検出してAnimatorパラメータやUdonイベントをトリガーするコンポーネント。
@@ -117,6 +117,41 @@ void OnContactExit(ContactExitInfo info)
 | enterVelocity | Vector3 | 接触時の相対速度 |
 | contactPoint | Vector3 | ワールド座標での接触推定点 |
 | matchingTags | string[] | 一致したタグ一覧 |
+
+---
+
+## Advanced Parameters（SDK 3.10.6+）
+
+旧称「Advanced Proximity Parameters」から改名。**全Receiver Type**（Constant・OnEnter・Proximity）で利用可能になった。
+
+| Advanced Parameter | 型 | 説明 |
+|-------------------|-----|------|
+| Sender Type | Int | 最近接Senderの種別（0=Other, 1=Self, 2=Avatar, 3=World） |
+| Local Position | Vector3 | Receiver基準のローカル座標 |
+| Local Velocity | Vector3 | Receiver基準の局所速度 |
+| Sender Lossy Scale | Float | 最近接SenderのUnityロッシースケール（ワールド空間） |
+| Point Separation | Float | 最近接する内部点間のワールド空間距離 |
+
+- **マルチセレクトドロップダウン**で必要なパラメータのみ生成（パラメータ数を節約可能）
+- 2つのSenderが等距離の場合、Point Separationが小さい方（内部点が近い方）が選択される
+- **Receiverは別パラメータ名で Material Write とAnimator Accessを分離可能**
+- 出典: https://creators.vrchat.com/releases/release-3-10-6
+
+---
+
+## Material Contacts（SDK 3.10.6+）
+
+最近接の8 Senderのワールド空間トランスフォームデータをマテリアルプロパティへ直接書き込む機能。
+
+| 設定 | 説明 |
+|------|------|
+| Mesh Renderers | 最大4個のMesh Rendererを指定（データ書き込み先） |
+| VRCContacts.cginc | シェーダー作者向けヘルパーincludeが提供されている |
+
+**活用例:** タッチ連動シェーダーエフェクト、接触位置の視覚化、近接オブジェクトの方向情報をシェーダーに渡す
+
+- Shadows Disabledのレンダラーへのマテリアル書き込み失敗バグが修正済み
+- 出典: https://creators.vrchat.com/releases/release-3-10-6
 
 ---
 

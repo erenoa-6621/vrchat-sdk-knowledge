@@ -4,6 +4,74 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-11-01
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.6（安定版）リリース**: 2026-10-30（前回 3.10.5 から大型アップデート）
+
+  #### ネイティブフェイストラッキング（新機能）
+  - Avatar Descriptorに新しい「Face Tracking」セクションが追加
+  - Unified Expressions標準（VRCFT互換）のトラッキングキーに対応
+  - 複数メッシュにまたがるBlendshapeとVisemeをドライブ可能
+  - **Viseme Dampen**: トラッキングによる口の動きと音声駆動の動きをバランス調整
+  - **Parameter Behaviors**: トラッキング入力の組み合わせ、Blendshapeのドライブ・制限、Animatorへの値転送
+  - ネットワーク同期フェイストラッキングは同期パラメータバジェットを消費しない
+  - デスクトップPC・AndroidでのSelfie Expression対応、OSC `/tracking/face/v1` 経由トラッキング対応
+  - 新パフォーマンスランク指標: Face Tracking Operations・Forwarded Parameters
+
+  #### Contacts（SDK 3.10.6）
+  - **Advanced Parameters**（旧称: Advanced Proximity Parameters）に改名。**全Receiver Type**で使用可能に
+  - 新Advanced Parameter: `Sender Lossy Scale`（Senderのワールドスケール）・`Point Separation`（最近接内部点間距離）
+  - **Material Contacts（新機能）**: 最近接8つのSenderのワールド空間トランスフォームを最大4つのMesh Rendererのマテリアルプロパティに書き込み。`VRCContacts.cginc` ヘルパー提供
+  - AdvancedParamsはマルチセレクト方式で必要なパラメータのみ生成可能
+  - Receiverでマテリアル書き込みとAnimatorアクセスに別パラメータ名を使用可能
+
+  #### Constraints（SDK 3.10.6）
+  - **Smoothing Factor（新オプション）**: 0以上の値を設定すると制約が徐々にターゲットへ近づく（スムーズ追従）
+
+  #### アニメーター・エクスプレッションパラメータ（SDK 3.10.6）
+  - **Lerp Duration**: 値が線形補間でターゲット値に近づく
+  - **Bit Width**: 8bit未満のビット幅指定が可能（同期パラメータ節約）
+  - **Representation**: Float = Unsigned（0〜1）または通常（-1〜1）、Int = Signed（-128〜127）または通常（0〜255）
+  - **Bool Value設定復活**（3.10.2で削除されていたが復活、SDK警告あり）
+  - カスタム表現上限引き上げ: アバター全体命令数 512→2048、Per-behaviour 64→256命令・512→1024文字
+
+  #### PhysBones（SDK 3.10.6）
+  - 非均一スケール（X/Y/Zが異なる）のTransformでの安定性を改善（完全サポートではない）
+
+  #### VRCRaycast Version 1.1
+  - Rayが`Player`レイヤー上の他ユーザーにヒット可能に
+  - Result Transformが不要に（Avatarパラメータへ直接書き込み可能）
+
+  - 出典: https://creators.vrchat.com/releases/release-3-10-6
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- 新規の有用なTipsは確認できず（検索結果は既存エントリと重複のみ）
+
+### 更新ファイル一覧
+
+- `components/contacts.md`: Advanced Parameters改名・Material Contacts新機能を追記、最終更新日を2026-11-01に更新
+- `components/constraints.md`: Smoothing Factorオプションを追記、最終更新日を2026-11-01に追加
+- `animations/animator-parameters.md`: Lerp Duration・Bit Width・Representation・Bool Value復活を追記、最終更新日を2026-11-01に更新
+- `components/physbones.md`: 非均一スケール改善メモを追記、最終更新日を2026-11-01に更新
+- `community/CHANGELOG.md`: 2026-11-01 エントリを追加
+
+### 確認済み・変更なし
+
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+- Playable Layers仕様: 変更なし
+
+---
+
 ## 2026-10-25
 
 ### VRChat SDK（公式ドキュメント確認）

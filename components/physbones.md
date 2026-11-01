@@ -1,6 +1,6 @@
 # VRC Phys Bone
 
-最終更新: 2026-06-21  
+最終更新: 2026-11-01  
 公式: https://creators.vrchat.com/avatars/avatar-dynamics/physbones/  
 参照: https://creators.vrchat.com/common-components/physbones/
 
@@ -14,6 +14,7 @@
 - **Humanoidボーン（Hip, Spine, Chest等）をRootに設定しない** → アバター移動機能が壊れる
 - **PhysBoneのプロパティをAnimationで変更しない**
 - **単一ボーンのPhysBoneはEndpoint Positionを必ず非ゼロ値に設定する**
+- **非均一スケール（X/Y/Zが異なるスケール）は非推奨**。SDK 3.10.6で安定性が改善されたが、完全サポート外であることに変わりはない（出典: https://creators.vrchat.com/releases/release-3-10-6）
 
 ---
 

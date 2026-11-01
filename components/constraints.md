@@ -1,6 +1,7 @@
 # VRC Constraints（6種）
 
-公式: https://creators.vrchat.com/avatars/avatar-dynamics/constraints/
+公式: https://creators.vrchat.com/avatars/avatar-dynamics/constraints/  
+最終更新: 2026-11-01
 
 ボーンの位置・回転・スケールを他のトランスフォームに追従させるコンポーネント群。  
 UnityビルトインConstraintより高パフォーマンス。
@@ -38,6 +39,7 @@ UnityビルトインConstraintより高パフォーマンス。
 | Solve In Local Space | Bool | ワールド空間 vs ローカル空間で計算 |
 | Freeze To World | Bool | ワールド空間に固定（ソースを無視） |
 | Rebake Offsets When Unfrozen | Bool | Freeze解除時にオフセットを再計算 |
+| **Smoothing Factor** | Float | **SDK 3.10.6+**: 0以上の値を設定すると、制約がターゲットへ徐々に近づく（スナップではなく滑らかに追従）。0=スナップ（従来動作） |
 
 ---
 
