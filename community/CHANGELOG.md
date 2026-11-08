@@ -4,6 +4,56 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-11-08
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.6（安定版）**: 前回から変更なし（2026-10-30リリース済み）
+- 出典: https://creators.vrchat.com/releases/
+
+#### Animator Parameters（ドキュメント更新: Oct 28, 2026）
+
+公式 Animator Parameters ページ（最終更新 2026-10-28）に以下のパラメータが掲載されていたが当ナレッジベース未記載だったため追加:
+
+- **UserEyeTracking**（Bool）: 視線トラッキングデータが利用可能ならtrue。Expression Parameters不要、同期ビット予算を消費しない
+- **UserFaceTracking**（Bool）: 顔トラッキングが許可されソースが有効ならtrue。SDK 3.10.6で導入されたネイティブフェイストラッキング機能と連動
+- **AvatarVersion**（Int）: SDK3以降で作られたアバターなら3、それ以外は0
+- **InStation**（Bool）: ステーション（Station）内にいるか（既存の `Seated` とは異なる）
+
+#### PhysBone Collider（ドキュメント更新）
+
+- **Global Collision** の型がBoolからEnumに変更: True（全体でグローバル衝突）/ False（グローバル衝突なし）/ **Other**（アバター・ワールド・アイテムを個別指定）
+- **Allow Collision: Other** の説明を更新: 「Self/Others個別ON/OFF」→「アバター・ワールド・アイテムの組み合わせを個別指定」
+- 出典: https://creators.vrchat.com/avatars/avatar-dynamics/physbones/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 前回から変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- 新規の有用なTipsは確認できず（検索結果は既存エントリと重複のみ）
+
+### 更新ファイル一覧
+
+- `animations/animator-parameters.md`: UserEyeTracking・UserFaceTracking・AvatarVersion・InStatioを追記、最終更新日を2026-11-08に更新
+- `components/physbones.md`: Global CollisionのEnum化と Allow Collision Other の詳細説明を更新、最終更新日を2026-11-08に更新
+- `community/CHANGELOG.md`: 2026-11-08 エントリを追加
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.6（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1）: コライダーEnum型記載を更新
+- Contacts仕様（ボックス形状・Advanced Parameters含む）: 変更なし
+- Constraints仕様（Smoothing Factor含む）: 変更なし
+- Playable Layers仕様: 変更なし
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-11-01
 
 ### VRChat SDK（公式ドキュメント確認）

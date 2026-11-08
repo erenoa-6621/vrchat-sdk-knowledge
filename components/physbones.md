@@ -1,6 +1,6 @@
 # VRC Phys Bone
 
-最終更新: 2026-11-01  
+最終更新: 2026-11-08  
 公式: https://creators.vrchat.com/avatars/avatar-dynamics/physbones/  
 参照: https://creators.vrchat.com/common-components/physbones/
 
@@ -180,7 +180,7 @@
 |----|------|
 | True | 全プレイヤーの指・手のグローバルコライダーと衝突する |
 | False | グローバルコライダーとは衝突しない。**Collidersリスト内のColliderとは衝突する** |
-| Other | Self（自分）とOthers（他プレイヤー）を個別にON/OFF設定 |
+| Other | アバター・ワールド・アイテムの組み合わせを個別指定（詳細フィルタリング） |
 
 > **重要:** Allow CollisionがFalseでも、CollidersリストにPhysBone Colliderを入れていればそれとは衝突する
 
@@ -219,7 +219,7 @@ PhysBoneとの衝突判定を提供する別コンポーネント。PhysBoneと�
 | Rotation | Quaternion | Root Transformからの回転オフセット |
 | Inside Bounds | Bool | ONの場合ボーンをCollider内側に収める（デフォルトOFF=外側に弾く） |
 | Bones As Sphere | Bool | ONの場合ボーンの衝突をカプセルではなく球として扱う |
-| **Global Collision** | **Bool** | **ONにするとアバター外部（他アバター・ワールド）のPhysBoneとも衝突するグローバルコライダーになる（SDK 3.10.4+）** |
+| **Global Collision** | **Enum** | **True（全体でグローバル衝突）/ False（グローバル衝突なし）/ Other（アバター・ワールド・アイテムを個別指定）。グローバルコライダーとして機能し他アバターやワールドのPhysBoneとも衝突する（SDK 3.10.4+）** |
 
 ### Shape Type 詳細
 

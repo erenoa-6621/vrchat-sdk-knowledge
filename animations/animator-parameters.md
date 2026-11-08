@@ -1,6 +1,6 @@
 # Animator Parameters
 
-最終更新: 2026-11-01  
+最終更新: 2026-11-08  
 公式: https://creators.vrchat.com/avatars/animator-parameters/
 
 VRChatがアバターのAnimatorに自動的に書き込むビルトインパラメータと、  
@@ -57,6 +57,7 @@ Expression Parametersで定義するカスタムパラメータの一覧。
 | Upright | Float | 0.0〜1.0 | 姿勢の垂直度（0=水平、1=直立） |
 | Grounded | Bool | true/false | 地面に接触しているか |
 | Seated | Bool | true/false | 着席状態か |
+| InStation | Bool | true/false | ステーション（Station）内にいるか |
 | AFK | Bool | true/false | AFKモードか |
 
 ### トラッキング・モード
@@ -69,6 +70,9 @@ Expression Parametersで定義するカスタムパラメータの一覧。
 | Earmuffs | Bool | true/false | イヤーマフ機能が有効か |
 | IsAnimatorEnabled | Bool | true/false | アニメーターが有効かどうか（SDK 3.10.x で文書化） |
 | IsOnFriendsList | Bool | true/false | このアバター着用者が自分のフレンドリストにいるか |
+| AvatarVersion | Int | 0, 3 | SDK3以降で作られたアバターなら3、それ以外は0 |
+| UserEyeTracking | Bool | true/false | 視線トラッキングデータが利用可能ならtrue。Expression Parameters不要、同期ビット予算も消費しない |
+| UserFaceTracking | Bool | true/false | 顔トラッキングが許可されソースが有効ならtrue。Expression Parameters不要、同期ビット予算も消費しない（SDK 3.10.6+）。出典: https://creators.vrchat.com/avatars/animator-parameters/ |
 
 **TrackingType 対応表:**
 | 値 | トラッキング状態 |
