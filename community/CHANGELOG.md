@@ -4,6 +4,51 @@ VRChat SDK & Modular Avatar ナレッジベースの週次更新記録。
 
 ---
 
+## 2026-11-15
+
+### VRChat SDK（公式ドキュメント確認）
+
+- **SDK 3.10.6（安定版）**: 前回から変更なし（2026-10-30リリース済み）
+- PhysBoneページ（最終更新 2026-10-30）: 新規変更なし
+- Contacts（最終更新 2026-10-24）: 新規変更なし
+- Constraints（最終更新 2026-09-28）: 変更なし
+- Playable Layers（最終更新 2026-10-07）: 変更なし
+- Animator Parameters（最終更新 2026-10-28）: 変更なし
+- 出典: https://creators.vrchat.com/releases/
+
+### Modular Avatar（公式ドキュメント確認）
+
+- **v1.18.7（安定版）**: 前回から変更なし（2026-09-01リリース済み）
+- Merge Armature・Menu Installer: 変更なし
+- 出典: https://modular-avatar.nadena.dev/docs/changelog
+
+### コミュニティTips
+
+- **QuestAssist 2.0**（`community/tips-tools.md` Quest対応ツールセクションに新エントリ追加）
+  - NoLogic Lab 製。PC向けアバターをQuest/Android向けに自動変換するUnityエディタ拡張（2026-11-10 リリース）
+  - 2.0でポリゴン削減ロジックを刷新。顔・手など視認性優先で保持、テスト17体で見た目のズレが平均約半分に改善
+  - 仕上がりプリセット3段階（見た目優先・バランス・軽さ優先）、揺れ物のPC/Quest同期保持
+  - 無料版0円 / 応援版¥500 / 製品版¥1,500
+  - 出典: https://www.moguravr.com/?p=381011
+
+### 更新ファイル一覧
+
+- `community/tips-tools.md`: QuestAssist 2.0エントリをQuest対応ツールセクションに追加、最終更新日を2026-11-15に更新
+- `community/CHANGELOG.md`: 2026-11-15 エントリを追加
+
+### 確認済み・変更なし
+
+- VRChat SDK 3.10.6（安定版）: 変更なし
+- PhysBone仕様（Version 1.0/1.1、グローバルコライダー含む）: 変更なし
+- Contacts仕様（ボックス形状・Material Contacts含む）: 変更なし
+- Constraints仕様（Smoothing Factor含む）: 変更なし
+- Playable Layers仕様: 変更なし
+- Animator Parameters（UserEyeTracking・UserFaceTracking含む）: 変更なし
+- Modular Avatar v1.18.7（安定版）: 変更なし
+- Merge Armature、Menu Installer: 変更なし
+
+---
+
 ## 2026-11-08
 
 ### VRChat SDK（公式ドキュメント確認）
